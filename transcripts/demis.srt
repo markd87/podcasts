@@ -1,0 +1,5640 @@
+1
+00:00:00,000 --> 00:00:07,280
+The following is a conversation with Demis Hassabis, CEO and co-founder of DeepMind, a company
+
+2
+00:00:07,280 --> 00:00:12,160
+that has published and built some of the most incredible artificial intelligence systems
+
+3
+00:00:12,160 --> 00:00:18,640
+in the history of computing, including Alpha Zero that learned all by itself to play the game
+
+4
+00:00:18,640 --> 00:00:25,040
+of Go better than any human in the world and Alpha Fold 2 that solved protein folding.
+
+5
+00:00:25,040 --> 00:00:29,920
+Both tasks considered nearly impossible for a very long time.
+
+6
+00:00:31,120 --> 00:00:35,600
+Demis is widely considered to be one of the most brilliant and impactful humans
+
+7
+00:00:35,600 --> 00:00:40,400
+in the history of artificial intelligence and science and engineering in general.
+
+8
+00:00:41,120 --> 00:00:47,280
+This was truly an honor and a pleasure for me to finally sit down with him for this conversation
+
+9
+00:00:47,280 --> 00:00:50,240
+and I'm sure we will talk many times again in the future.
+
+10
+00:00:50,240 --> 00:00:56,640
+This is Luxembourg podcast. To support it, please check out our sponsors in the description.
+
+11
+00:00:56,640 --> 00:01:00,240
+And now, dear friends, here's Demis Hassabis.
+
+12
+00:01:01,440 --> 00:01:03,360
+Let's start with a bit of a personal question.
+
+13
+00:01:03,920 --> 00:01:09,680
+Am I an AI program you wrote to interview people until I get good enough to interview you?
+
+14
+00:01:10,960 --> 00:01:14,640
+Well, I'd be impressed if you were. I'd be impressed by myself if you were.
+
+15
+00:01:14,640 --> 00:01:18,720
+I don't think we're quite up to that yet, but maybe you're from the future, Lex.
+
+16
+00:01:18,720 --> 00:01:23,520
+If you did, would you tell me? Is that a good thing to tell a language model that's tasked
+
+17
+00:01:23,520 --> 00:01:29,600
+with interviewing that it is, in fact, AI? Maybe we're in a kind of meta-turing test.
+
+18
+00:01:29,600 --> 00:01:33,840
+Probably it would be a good idea not to tell you, so it doesn't change your behavior, right?
+
+19
+00:01:33,840 --> 00:01:36,960
+This is a kind of vice and borough-gun-settity principle situation.
+
+20
+00:01:36,960 --> 00:01:40,880
+If I told you you behave differently, maybe that's what's happening with us, of course.
+
+21
+00:01:40,880 --> 00:01:48,960
+This is a benchmark from the future where they replay 2022 as a year before AI's were good enough.
+
+22
+00:01:48,960 --> 00:01:52,720
+Yet, and now we want to see, is it going to pass, exactly.
+
+23
+00:01:53,840 --> 00:01:57,280
+If I was such a program, would you be able to tell, do you think?
+
+24
+00:01:57,840 --> 00:02:01,120
+So, to the touring test question, you've talked about
+
+25
+00:02:03,200 --> 00:02:07,200
+the benchmark for solving intelligence. What would be the impressive thing?
+
+26
+00:02:07,200 --> 00:02:11,280
+You've talked about winning a Nobel Prize in ACES, the winning a Nobel Prize,
+
+27
+00:02:11,280 --> 00:02:15,680
+but I still return to the touring test as a compelling test. The spirit of the touring test is
+
+28
+00:02:15,680 --> 00:02:20,160
+a compelling test. Yeah, the touring test, of course, it's been unbelievably influential,
+
+29
+00:02:20,160 --> 00:02:24,560
+and Cheering's one of my all-time heroes. But I think if you look back at the 1950
+
+30
+00:02:24,560 --> 00:02:29,520
+papers, original paper, and read the original, you'll see, I don't think he meant it to be a
+
+31
+00:02:29,520 --> 00:02:33,840
+rigorous formal test. I think it was more like a thought experiment, almost a bit of philosophy
+
+32
+00:02:33,840 --> 00:02:38,000
+he was writing. If you look at the style of the paper, and you can see he didn't specify it very
+
+33
+00:02:38,000 --> 00:02:43,680
+rigorously. For example, he didn't specify the knowledge that the expert or judge would have,
+
+34
+00:02:44,800 --> 00:02:49,360
+not how much time would they have to investigate this. These are important parameters,
+
+35
+00:02:49,360 --> 00:02:57,680
+if you're going to make it a true formal test. By some measures, people claim the touring test
+
+36
+00:02:57,680 --> 00:03:04,160
+passed several decades ago. I remember someone claiming that with a very box-standard normal
+
+37
+00:03:04,160 --> 00:03:12,960
+logic model, because they pretended it was a kit. The judges thought that the machine was a child.
+
+38
+00:03:14,320 --> 00:03:18,960
+That would be very different from an expert AI person interrogating a machine and knowing
+
+39
+00:03:18,960 --> 00:03:26,400
+how it was built and so on. We should probably move away from that as a formal test and move more
+
+40
+00:03:26,400 --> 00:03:32,960
+towards a general test where we test the AI capabilities on a range of tasks and see if it
+
+41
+00:03:32,960 --> 00:03:38,320
+reaches human level or above performance on maybe thousands, perhaps even millions of tasks,
+
+42
+00:03:38,320 --> 00:03:44,720
+eventually, and cover the entire sort of cognitive space. I think for its time, it was an amazing
+
+43
+00:03:44,720 --> 00:03:49,280
+thought experiment, and also 1950s, obviously, it was barely the dawn of the computer age.
+
+44
+00:03:49,280 --> 00:03:53,840
+So of course, he only thought about text, and now we have a lot more different inputs.
+
+45
+00:03:53,840 --> 00:03:59,440
+So yeah, maybe the better thing to test is the generalizability, so across multiple tasks,
+
+46
+00:03:59,440 --> 00:04:06,560
+but I think it's also possible, as systems like God will show, that eventually that might
+
+47
+00:04:06,560 --> 00:04:11,440
+map right back to language. So you might be able to demonstrate your ability to generalize
+
+48
+00:04:11,440 --> 00:04:17,680
+across tasks by then communicating your ability to generalize across tasks, which is kind of what
+
+49
+00:04:17,680 --> 00:04:22,480
+we do through conversation anyway, when we jump around. Ultimately, what's in there in that
+
+50
+00:04:22,480 --> 00:04:29,120
+conversation is not just you moving around knowledge, it's you moving around like these
+
+51
+00:04:29,120 --> 00:04:38,160
+entirely different modalities of understanding that ultimately map to your ability to operate
+
+52
+00:04:38,160 --> 00:04:43,760
+successfully in all of these domains, which you can think of as tasks. Yeah, I think certainly
+
+53
+00:04:43,760 --> 00:04:50,000
+we as humans use language as our main generalization communication tool. So I think we end up
+
+54
+00:04:50,000 --> 00:04:55,920
+thinking in language and expressing our solutions in language. So it's going to be very powerful
+
+55
+00:04:57,360 --> 00:05:04,400
+mode in which to explain the system to explain what it's doing, but I don't think it's the only
+
+56
+00:05:05,840 --> 00:05:10,640
+modality that matters. So I think there's going to be a lot of, you know, there's a lot of different
+
+57
+00:05:10,640 --> 00:05:18,480
+ways to express capabilities other than just language. Yeah, visual, robotics, body language,
+
+58
+00:05:18,480 --> 00:05:25,280
+yeah, actions, the interactive aspect of all that, that's all part of it. But what's interesting
+
+59
+00:05:25,280 --> 00:05:31,760
+with Gato is that it's sort of pushing prediction to the maximum in terms of like, you know,
+
+60
+00:05:31,760 --> 00:05:36,080
+mapping arbitrary sequences to other sequences and sort of just predicting what's going to happen
+
+61
+00:05:36,080 --> 00:05:43,120
+next. So prediction seems to be fundamental to intelligence. And what you're predicting doesn't
+
+62
+00:05:43,120 --> 00:05:47,520
+so much matter. Yeah, it seems like you can generalize that quite well. So obviously, language
+
+63
+00:05:47,520 --> 00:05:54,400
+models predict the next word. Gato predicts potentially any action or any token. And it's just
+
+64
+00:05:54,400 --> 00:05:59,360
+the beginning really. So I'm most general agent. One could call it so far, but, you know, that
+
+65
+00:05:59,360 --> 00:06:02,880
+itself can be scaled up massively more than we've done so far. And obviously, we're in the
+
+66
+00:06:02,880 --> 00:06:08,400
+in the middle of doing that. But the big part of solving AGI is creating benchmarks that
+
+67
+00:06:09,120 --> 00:06:14,960
+help us get closer and closer sort of creating benchmarks that test the generalizability. And
+
+68
+00:06:14,960 --> 00:06:21,040
+it's just still interesting that this fellow Alan Turing was one of the first and probably
+
+69
+00:06:21,040 --> 00:06:26,080
+still one of the only people that was trying maybe philosophically, but was trying to formulate
+
+70
+00:06:26,080 --> 00:06:32,400
+a benchmark that could be followed. It is even though it's fuzzy, it's still sufficiently rigorous
+
+71
+00:06:32,400 --> 00:06:37,440
+the way you can run that test. And I still think something like the Turing test will end at the end
+
+72
+00:06:37,440 --> 00:06:44,080
+of the day be the thing that truly impresses other humans so that you can have a close friend
+
+73
+00:06:44,080 --> 00:06:49,600
+who's an AI system. And for that friend to be a good friend, they're going to have to be able to
+
+74
+00:06:51,040 --> 00:06:58,080
+play Starcraft. And they're going to have to do all of these tasks. Get you a beer so that
+
+75
+00:06:58,080 --> 00:07:05,760
+the robotics tasks play games with you. Use language, humor, all those kinds of things, but that
+
+76
+00:07:05,760 --> 00:07:11,680
+ultimately can blow down to language. It feels like not in terms of the AI community, but in terms
+
+77
+00:07:11,680 --> 00:07:16,160
+of the actual impact of general intelligence on the world, it feels like language will be the
+
+78
+00:07:16,160 --> 00:07:22,320
+place where truly shines. I think so because it's such an important kind of input output for us.
+
+79
+00:07:22,320 --> 00:07:28,720
+I think you're right. I think the Turing test, the philosophy behind it, which is the idea of
+
+80
+00:07:28,720 --> 00:07:37,600
+can a machine mimic the behaviors of a human. And I would say wider than just language and text,
+
+81
+00:07:37,600 --> 00:07:44,160
+then in terms of actions and everything else, creativity, all these things, then if it can
+
+82
+00:07:44,160 --> 00:07:49,760
+sort of match or exceed human cognitive capabilities, then I think we have a true intelligence.
+
+83
+00:07:49,760 --> 00:07:55,200
+So I felt from that perspective, you're right. I think he did formulate the right kind of setup.
+
+84
+00:07:55,840 --> 00:08:01,600
+I just I think there'll be a kind of humor in the AI systems, the future looking back to this
+
+85
+00:08:01,600 --> 00:08:09,200
+conversation and thinking about the Turing test and also thinking about by that time,
+
+86
+00:08:09,200 --> 00:08:14,240
+they would know which year they were finally able to sort of cross the threshold of human
+
+87
+00:08:14,240 --> 00:08:21,040
+level intelligence and think how funny it is that we humans were still confused about this whole
+
+88
+00:08:21,040 --> 00:08:27,120
+problem that's been long ago been solved. Well, hello to the AI agents of the future.
+
+89
+00:08:27,120 --> 00:08:32,720
+Anyway, so go back to your to your journey. When did you fall in love with programming first?
+
+90
+00:08:33,600 --> 00:08:39,520
+Well, it was pretty, it was pretty young age actually. So you know, I started off actually
+
+91
+00:08:39,520 --> 00:08:43,920
+games was my first love. So starting to play chess when I was around four years old and then
+
+92
+00:08:44,800 --> 00:08:49,680
+is actually with winnings from a chess competition that I managed to buy my first chess computer
+
+93
+00:08:49,680 --> 00:08:54,080
+when I was about eight years old. It was a ZX Spectrum, which was hugely popular in the UK at the time.
+
+94
+00:08:54,080 --> 00:08:59,920
+And it was an amazing machine because I think it trained a whole generation of programmers in
+
+95
+00:08:59,920 --> 00:09:04,160
+the UK because it was so accessible, you know, you literally switched it on and there was the
+
+96
+00:09:04,160 --> 00:09:09,280
+basic prompt and you could just get going and my parents didn't really know anything about
+
+97
+00:09:09,280 --> 00:09:14,640
+computers. But because it was my money from a chess competition, I could say I wanted to buy it.
+
+98
+00:09:15,600 --> 00:09:21,920
+And then, you know, I just went to bookstores, got books on programming and started typing in,
+
+99
+00:09:21,920 --> 00:09:27,120
+you know, the programming code and then of course, once you start doing that, you start adjusting
+
+100
+00:09:27,120 --> 00:09:31,360
+it and then making your own games. And that's when I fell in love with computers and realized that
+
+101
+00:09:31,360 --> 00:09:36,960
+they were a very magical device. In a way, I kind of, I don't want to be able to explain this at
+
+102
+00:09:36,960 --> 00:09:41,360
+the time, but I felt that they were sort of almost a magical extension of your mind. I always had
+
+103
+00:09:41,360 --> 00:09:46,080
+this feeling and I've always loved this about computers that you can set them off doing something,
+
+104
+00:09:46,080 --> 00:09:52,000
+some task for you. You can go to sleep, come back the next day and it's solved. You know, that feels
+
+105
+00:09:52,000 --> 00:09:56,880
+magical to me. So, I mean, all machines do that to some extent. They all enhance our natural
+
+106
+00:09:56,880 --> 00:10:02,640
+capabilities. Obviously, cars make us allow us to move faster than we can run, but this was a machine
+
+107
+00:10:02,640 --> 00:10:09,680
+to extend the mind. And then of course, AI is the ultimate expression of what a machine may be
+
+108
+00:10:09,680 --> 00:10:16,000
+able to do or learn. So, very naturally for me, that thought extended into AI quite quickly.
+
+109
+00:10:16,000 --> 00:10:21,920
+Remember the programming language that was first started and was especially special to the machine?
+
+110
+00:10:21,920 --> 00:10:26,240
+No, it was just the basic, I think it was just basic on the ZX Spectrum. I don't know what
+
+111
+00:10:26,240 --> 00:10:32,640
+specific form it was. And then later on, I got a Commodore Miga, which was a fantastic machine.
+
+112
+00:10:32,640 --> 00:10:37,360
+Now you're just showing off. So, yeah, well, lots of my friends had Atari STs and I managed to get
+
+113
+00:10:37,360 --> 00:10:43,680
+amigas. It was a bit more powerful and that was incredible and used to do programming in assembler
+
+114
+00:10:43,680 --> 00:10:50,400
+and also Amos basic, this specific form of basic. It was incredible actually. So, all my coding
+
+115
+00:10:50,400 --> 00:10:56,720
+skills. And when did you fall in love with AI? So, when did you first start to gain an understanding
+
+116
+00:10:56,720 --> 00:11:02,720
+that you can not just write programs that do some mathematical operations for you while you sleep,
+
+117
+00:11:02,720 --> 00:11:11,360
+but something that's a keen to bringing an entity to life, sort of a thing that can figure out
+
+118
+00:11:11,360 --> 00:11:17,200
+something more complicated than a simple mathematical operation? Yeah, so there was a few stages for
+
+119
+00:11:17,200 --> 00:11:22,320
+me all while I was very young. So, first of all, as I was trying to improve at playing chess,
+
+120
+00:11:22,320 --> 00:11:25,840
+I was captaining various English and junior chess teams and at the time when I was about,
+
+121
+00:11:25,840 --> 00:11:29,760
+you know, maybe 10, 11 years old, I was going to become a professional chess player. That was my
+
+122
+00:11:29,760 --> 00:11:35,920
+first thought. So, that dream was there to try to get to the highest level of chess. Yeah, so,
+
+123
+00:11:35,920 --> 00:11:40,400
+I was, you know, I got to, when I was about 12 years old, I got to Master Standard and I was
+
+124
+00:11:40,400 --> 00:11:44,640
+second highest rated player in the world to Judith Polga, who obviously ended up being an amazing
+
+125
+00:11:44,640 --> 00:11:51,280
+chess player and a world women's champion. And when I was trying to improve at chess, what you
+
+126
+00:11:51,280 --> 00:11:55,280
+do is you, obviously, first of all, you're trying to improve your own thinking processes. So,
+
+127
+00:11:55,280 --> 00:12:00,320
+that leads you to thinking about thinking, how is your brain coming up with these ideas?
+
+128
+00:12:00,320 --> 00:12:05,040
+Why is it making mistakes? How can you, how can you improve that thought process? But the second
+
+129
+00:12:05,040 --> 00:12:10,400
+thing is that you, it was just the beginning. This was like in the, in the early 80s, mid 80s of
+
+130
+00:12:10,400 --> 00:12:13,920
+chess computers. If you remember, they were physical balls, like the one we have in front of us,
+
+131
+00:12:13,920 --> 00:12:19,520
+and you pressed down the, you know, the squares. And I think Kasparov had a branded version of it
+
+132
+00:12:19,520 --> 00:12:25,040
+that I got. And you were, you know, used to, they're not as strong as they are today, but they were,
+
+133
+00:12:25,040 --> 00:12:30,560
+they were pretty strong and used to practice against them to try and improve your openings and
+
+134
+00:12:30,560 --> 00:12:34,800
+other things. And so, I remember, I think I probably got my first one, I was around 11 or 12,
+
+135
+00:12:34,800 --> 00:12:40,880
+and I remember thinking, this is amazing, you know, how, how someone programmed this, this chess
+
+136
+00:12:40,880 --> 00:12:46,880
+ball to play chess. And it was very formative book I bought, which was called the chess computer
+
+137
+00:12:46,880 --> 00:12:51,680
+handbook by David Levy. It came out in 1984 or something. So I must have got it when I was about
+
+138
+00:12:51,680 --> 00:12:57,120
+11, 12, and it explained fully how these chess programs were made. And I remember my first AI
+
+139
+00:12:57,120 --> 00:13:03,120
+program being a program, my Amiga, it couldn't, it wasn't powerful enough to play chess. I couldn't
+
+140
+00:13:03,120 --> 00:13:07,920
+write a whole chess program, but I wrote a program for it to play Othello, reverse it, sometimes called
+
+141
+00:13:07,920 --> 00:13:13,200
+I think in the US. And so a slightly simpler game than chess, but I used all of the principles
+
+142
+00:13:13,200 --> 00:13:17,360
+that chess programs had, alphabeta, search, all of that. And that was my first AI program,
+
+143
+00:13:17,360 --> 00:13:21,920
+I remember that very well, I was around 12 years old. So that, that brought me into AI. And then
+
+144
+00:13:21,920 --> 00:13:27,200
+the second part was later on, on as around 16, 17, and I was writing games professionally,
+
+145
+00:13:27,200 --> 00:13:33,920
+designing games, writing game called Theme Park, which had AI as a core gameplay component,
+
+146
+00:13:33,920 --> 00:13:38,720
+as part of the simulation. And it sold, you know, millions of copies around the world, and people
+
+147
+00:13:38,720 --> 00:13:45,600
+loved the way that the AI, even though is relatively simple, by today's AI standards, was reacting
+
+148
+00:13:45,600 --> 00:13:50,080
+to the way you as the player played it. So it was a called a sandbox game. So it was one of the first
+
+149
+00:13:50,080 --> 00:13:54,880
+types of games like that, along with SimCity, and it meant that every game you played was unique.
+
+150
+00:13:55,520 --> 00:14:01,280
+Is there something you could say just on a small tangent about really impressive AI
+
+151
+00:14:01,280 --> 00:14:09,520
+from a game design, human enjoyment perspective, really impressive AI that you've seen in games,
+
+152
+00:14:09,520 --> 00:14:14,800
+and maybe what does it take to create AI system? And how hard of a problem is that? So a million
+
+153
+00:14:14,800 --> 00:14:22,720
+questions will just as a brief tangent. Well, look, I think games have been significant in my
+
+154
+00:14:22,720 --> 00:14:27,520
+life for three reasons. So first of all, to I was playing them and training myself on games
+
+155
+00:14:27,520 --> 00:14:33,120
+when I was a kid, then I went through a phase of designing games and writing AI for games. So all
+
+156
+00:14:33,120 --> 00:14:39,920
+the games I professionally wrote had AI as a core component. And that was mostly in the in the 90s.
+
+157
+00:14:39,920 --> 00:14:45,360
+And the reason I was doing that in games industry was at the time the games industry, I think,
+
+158
+00:14:45,360 --> 00:14:50,240
+was the cutting edge of technology. So whether it was graphics with people like John Carmack and Quake
+
+159
+00:14:50,240 --> 00:14:56,720
+and those kind of things or AI, I think actually all the action was going on in games. And we
+
+160
+00:14:56,720 --> 00:15:01,520
+seen we're still reaping the benefits of that even with things like GPUs, which I find ironic was
+
+161
+00:15:01,520 --> 00:15:06,080
+obviously invented for graphics, computer graphics, but then turns out to be amazingly useful for AI.
+
+162
+00:15:06,080 --> 00:15:13,280
+It just turns out everything's a matrix multiplication appears in the whole world. So I think games at
+
+163
+00:15:13,280 --> 00:15:20,000
+the time had the most cutting edge AI. And a lot of the games I was involved in writing. So there
+
+164
+00:15:20,000 --> 00:15:23,840
+was a game called Black and White, which was one game I was involved with in the early stages of,
+
+165
+00:15:23,840 --> 00:15:30,480
+which I still think is the most impressive example of reinforcement learning in a computer game.
+
+166
+00:15:30,480 --> 00:15:36,240
+So in that game, you know, you trained a little pet animal and yeah, and it sort of learned
+
+167
+00:15:36,240 --> 00:15:41,120
+from how you were treating it. So if you treated it badly, then it became mean. And then it would
+
+168
+00:15:41,120 --> 00:15:46,000
+be mean to your villagers and your and your population, the sort of the little tribe that you were
+
+169
+00:15:46,000 --> 00:15:50,800
+running. But if you were kind to it, then it would be kind. And people fascinated by how that
+
+170
+00:15:50,800 --> 00:15:55,840
+worked. And so was I to be honest with the way it kind of developed. And especially the mapping
+
+171
+00:15:55,840 --> 00:16:02,240
+to good in evil. Yeah. It made you major realized made me realize that you can sort of in the way
+
+172
+00:16:02,240 --> 00:16:10,480
+in the choices you make can define the where you end up. And that means all of us are capable of the
+
+173
+00:16:10,480 --> 00:16:17,520
+good evil. It all matters in the different choices along the trajectory to those places that you
+
+174
+00:16:17,520 --> 00:16:22,160
+make as fascinating. I mean, games can do that for a soft good to you. And it's rare. It seems
+
+175
+00:16:22,160 --> 00:16:26,960
+rare. Yeah. Well, games are I think a unique medium because you as the player, you're not just
+
+176
+00:16:26,960 --> 00:16:34,160
+passively consuming the entertainment, right? You're actually actively involved as an agent.
+
+177
+00:16:34,160 --> 00:16:38,560
+So I think that's what makes it in some ways can be more visceral than other other mediums like,
+
+178
+00:16:38,560 --> 00:16:42,800
+you know, films and books. So the second. So that was, you know, designing AI in games. And then
+
+179
+00:16:42,800 --> 00:16:49,680
+the third use. I we've used of AI is in deep mind from the beginning, which is using games as
+
+180
+00:16:49,680 --> 00:16:56,080
+a testing ground for proving out AI algorithms and developing AI algorithms. And that was a that
+
+181
+00:16:56,080 --> 00:17:01,760
+was a sort of a core component of our vision at the start of deep mind was that we would use games
+
+182
+00:17:01,760 --> 00:17:07,520
+very heavily as our main testing ground certainly to begin with because it's super efficient to
+
+183
+00:17:07,520 --> 00:17:13,200
+use games. And also, you know, it's very easy to have metrics to see how well your systems
+
+184
+00:17:13,200 --> 00:17:17,120
+are improving and what direction your ideas are going in and whether you're making incremental
+
+185
+00:17:17,120 --> 00:17:21,920
+improvements. And because those games are often rooted in something that humans did for a long
+
+186
+00:17:21,920 --> 00:17:28,160
+time beforehand, there's already a strong set of rules like it's already a damn good benchmark.
+
+187
+00:17:28,160 --> 00:17:32,720
+Yes, it's really good for so many reasons because you've got you've got you've got clear measures
+
+188
+00:17:32,720 --> 00:17:37,600
+of how good humans can be at these things. And in some cases, like Go, we've been playing it for
+
+189
+00:17:37,600 --> 00:17:44,560
+thousands of years. And often they have scores or at least win conditions. So it's very easy for
+
+190
+00:17:44,560 --> 00:17:48,240
+award learning systems to get a reward. It's very easy to specify what that reward is.
+
+191
+00:17:49,200 --> 00:17:55,360
+And also at the end, it's easy to, you know, to test externally, you know, how strong is your
+
+192
+00:17:55,360 --> 00:18:00,160
+system by, of course, playing against, you know, the world's strongest players at those games.
+
+193
+00:18:00,160 --> 00:18:05,520
+So it's so good for so many reasons. And it's also very efficient to run potentially millions of
+
+194
+00:18:05,520 --> 00:18:12,480
+simulations in parallel on the cloud. So I think there's a huge reason why we were so successful
+
+195
+00:18:12,480 --> 00:18:17,280
+back in, you know, starting out 2010, how come we were able to progress so quickly because
+
+196
+00:18:17,280 --> 00:18:22,720
+we'd utilize games. And, you know, at the beginning of DeepMind, we also hired some amazing
+
+197
+00:18:22,720 --> 00:18:30,000
+game engineers who I knew from my previous lives in the games industry. And that helped the bootstraps
+
+198
+00:18:30,000 --> 00:18:36,640
+very quickly. And plus it's somehow super compelling, almost at a philosophical level of man versus
+
+199
+00:18:36,640 --> 00:18:43,520
+machine, over, over chessboard or a go board. And especially given that the entire history of AI
+
+200
+00:18:43,520 --> 00:18:49,520
+is defined by people saying it's going to be impossible to make a machine that beats a human being
+
+201
+00:18:49,520 --> 00:18:56,320
+in chess. And then once that happened, people were certain when I was coming up in AI that go
+
+202
+00:18:56,320 --> 00:19:02,000
+is not a game that can be solved because of the combinatorial complexity. It's just two. It's,
+
+203
+00:19:02,000 --> 00:19:08,400
+it's, you know, no matter how much more is law you have, compute is just never going to be able
+
+204
+00:19:08,400 --> 00:19:15,840
+to crack the game of go. And so then there's something compelling about facing sort of taking on
+
+205
+00:19:15,840 --> 00:19:23,680
+the impossibility of that task from the AI researcher perspective, engineer perspective. And then
+
+206
+00:19:23,680 --> 00:19:30,400
+as a human being, just observing this whole thing, your beliefs about where your thought was
+
+207
+00:19:30,400 --> 00:19:39,520
+impossible, being broken apart, it's, it's humbling to realize we're not as smart as we thought.
+
+208
+00:19:40,320 --> 00:19:45,040
+It's humbling to realize that the things we think are impossible now perhaps will be done
+
+209
+00:19:45,680 --> 00:19:51,360
+in the future. There's something really powerful about a game, AI system,
+
+210
+00:19:51,360 --> 00:19:57,760
+being a human being in a game that drives that message home for like millions, billions of people,
+
+211
+00:19:57,760 --> 00:20:03,600
+especially in the case of Go. Sure. Well, look, I think it's, I mean, it has been a fascinating journey.
+
+212
+00:20:03,600 --> 00:20:09,680
+And especially as I think about it from, I can understand it from both sides, both as the AI,
+
+213
+00:20:10,480 --> 00:20:16,640
+you know, creators of the AI, but also as a games player originally. So, you know, it was a,
+
+214
+00:20:16,640 --> 00:20:21,600
+it was a really interesting, you know, I mean, it was, it was a fantastic, but also somewhat bittersweet
+
+215
+00:20:21,600 --> 00:20:27,520
+moment. The alpha go match for me, seeing that and, and, and being obviously heavily, heavily
+
+216
+00:20:27,520 --> 00:20:33,680
+involved in that. But, you know, as you say, chess has been the, I mean, Kasparov, I think,
+
+217
+00:20:33,680 --> 00:20:39,680
+rightly called it the Drosophila of intelligence, right? So it's sort of, I love that phrase. And
+
+218
+00:20:39,680 --> 00:20:45,920
+I think he's right because chess has been hand in hand with AI from the beginning of the,
+
+219
+00:20:45,920 --> 00:20:50,560
+the whole field, right? So I think every AI practitioner starting with cheering in
+
+220
+00:20:50,560 --> 00:20:57,280
+Claude Shannon and all those, the sort of forefathers of the field, tried their hand at writing
+
+221
+00:20:57,280 --> 00:21:02,000
+a chess program. I've got original audition of Claude Shannon's first chess program. I think
+
+222
+00:21:02,000 --> 00:21:09,600
+it was 1949, the original sort of paper. And they all did that and cheering famously
+
+223
+00:21:09,600 --> 00:21:13,600
+wrote a chess program that, but all the computers around them were obviously too slow to run it.
+
+224
+00:21:13,600 --> 00:21:18,160
+So he had to run, he had to be the computer, right? So he literally, I think, spent two or
+
+225
+00:21:18,160 --> 00:21:22,720
+three days running his own program by hand with pencil and paper and playing, playing a friend of his
+
+226
+00:21:23,440 --> 00:21:29,520
+with his chess program. So, of course, deep blue was a huge moment, beating Kasparov.
+
+227
+00:21:30,400 --> 00:21:34,640
+But actually, when that happened, I remember that very, very vividly, of course, because it was,
+
+228
+00:21:34,640 --> 00:21:38,960
+you know, chess and computers and AI, all the things I loved and I was at college at the time.
+
+229
+00:21:38,960 --> 00:21:43,520
+But I remember coming away from that, being more impressed by Kasparov's mind than I was by
+
+230
+00:21:43,520 --> 00:21:49,200
+deep blue because here was Kasparov with his human mind. Not only could he play chess more or less
+
+231
+00:21:49,200 --> 00:21:54,800
+to the same level as this brute of a calculation machine, but of course Kasparov can do everything
+
+232
+00:21:54,800 --> 00:21:58,960
+else humans can do, right? A bike, talk many languages, do politics, all the rest of the amazing
+
+233
+00:21:58,960 --> 00:22:06,880
+things that Kasparov does. And so with the same brain and yet deep blue, brilliant as it was at chess,
+
+234
+00:22:06,880 --> 00:22:14,560
+it'd been hand coded for chess and actually had distilled the knowledge of chess grand masters
+
+235
+00:22:14,560 --> 00:22:18,960
+into into a cool program, but it couldn't do anything else. Like it couldn't even play a
+
+236
+00:22:18,960 --> 00:22:25,920
+strictly simpler game like Tic Tac Toe. So, something to me was missing from intelligence from
+
+237
+00:22:25,920 --> 00:22:30,720
+that system that we would regard as intelligence. And I think it was this idea of generality
+
+238
+00:22:30,720 --> 00:22:37,840
+and also learning. And that's what we should try to do with AlphaGo. Yeah, with AlphaGo and Alpha0,
+
+239
+00:22:37,840 --> 00:22:44,400
+Mu0, and then got all the things that we'll get into some parts of. There's just a fascinating
+
+240
+00:22:44,400 --> 00:22:51,280
+trajectory here. But let's just stick on chess briefly. On the human side of chess, you've proposed
+
+241
+00:22:51,280 --> 00:22:58,400
+that from a game design perspective, the thing that makes chess compelling as a game is that
+
+242
+00:22:58,400 --> 00:23:04,240
+there's a creative tension between a bishop and the knight. Can you explain this? First of all,
+
+243
+00:23:04,240 --> 00:23:10,720
+it's really interesting to think about what makes a game compelling. It makes it stick across centuries.
+
+244
+00:23:11,920 --> 00:23:15,600
+Yeah, I was sort of thinking about this and actually a lot of even amazing chess players don't
+
+245
+00:23:15,600 --> 00:23:20,080
+think about it necessarily from a game's designer point of view. So it's with my game design hat on
+
+246
+00:23:20,080 --> 00:23:26,480
+that I was thinking about this. Why is chess so compelling? And I think a critical reason is the
+
+247
+00:23:26,480 --> 00:23:30,800
+dynamicness of the different kind of chess positions you can have, whether they're closed or
+
+248
+00:23:30,800 --> 00:23:36,320
+open and other things, comes from the bishop and the knight. So if you think about how different
+
+249
+00:23:36,320 --> 00:23:42,080
+the capabilities of the bishop and knight are in terms of the way they move and then somehow
+
+250
+00:23:42,080 --> 00:23:46,880
+chess has evolved to balance those two capabilities more or less equally. So they're both roughly
+
+251
+00:23:46,880 --> 00:23:51,520
+worth three points each. So you think that dynamics is always there and then the rest of the rules
+
+252
+00:23:51,520 --> 00:23:55,200
+are kind of trying to stabilize the game. Well, maybe. I mean, it's sort of, I don't know,
+
+253
+00:23:55,200 --> 00:23:59,120
+as chicken and egg situation probably both came together, but the fact that it's got to this
+
+254
+00:23:59,120 --> 00:24:03,520
+beautiful equilibrium where you can have the bishop and knight. They're so different in power,
+
+255
+00:24:04,320 --> 00:24:10,160
+but so equal in value across the set of the universe of all positions, somehow they've been
+
+256
+00:24:10,160 --> 00:24:15,920
+balanced by humanity over hundreds of years. I think gives the game the creative tension
+
+257
+00:24:16,720 --> 00:24:21,280
+that you can swap the bishop and knights for a bishop for a knight and they're more or less
+
+258
+00:24:21,280 --> 00:24:24,880
+the worth the same, but now you aim for a different type of position. If you have the knight, you want
+
+259
+00:24:24,880 --> 00:24:28,880
+a closed position. If you have the bishop, you want an open position. So I think that creates a
+
+260
+00:24:28,880 --> 00:24:34,640
+lot of the creative tension in chess. So some kind of controlled creative tension. From an AI
+
+261
+00:24:34,640 --> 00:24:40,480
+perspective, do you think AI systems could venture design games that are optimally compelling to humans?
+
+262
+00:24:41,440 --> 00:24:46,640
+Well, that's an interesting question. Sometimes I get asked about AI and creativity and this
+
+263
+00:24:46,640 --> 00:24:51,120
+and the way I answer that is relevant to that question, which is that I think they're different levels
+
+264
+00:24:51,120 --> 00:24:56,880
+of creativity, one could say. So I think if we define creativity as coming up with something original,
+
+265
+00:24:56,880 --> 00:25:02,560
+right, that's useful for a purpose, then I think the kind of lowest level of creativity is like an
+
+266
+00:25:02,560 --> 00:25:08,160
+interpolation, so an averaging of all the examples you see. So maybe very basic AI system could say
+
+267
+00:25:08,160 --> 00:25:12,720
+you could have that. So you show it millions of pictures of cats and then you say give me an average
+
+268
+00:25:12,720 --> 00:25:17,440
+looking cat, right, generate me an average looking cat. I would call that interpolation. Then there's
+
+269
+00:25:17,440 --> 00:25:23,280
+extrapolation, which something like AlphaGo showed. So AlphaGo played millions of games of Go against
+
+270
+00:25:23,280 --> 00:25:29,360
+itself and then it came up with brilliant new ideas like move 37 in game two, brilliant motif
+
+271
+00:25:29,360 --> 00:25:34,400
+strategies in Go that no humans had ever thought of, even though we've played it for thousands of
+
+272
+00:25:34,400 --> 00:25:39,440
+years and professionally for hundreds of years. So that I call that extrapolation. But then that's
+
+273
+00:25:39,440 --> 00:25:43,920
+still there's still a level above that, which is, you know, you could call out of the box thinking
+
+274
+00:25:43,920 --> 00:25:49,040
+or true innovation, which is could you invent Go, right? Could you invent chess and not just come
+
+275
+00:25:49,040 --> 00:25:53,600
+up with a brilliant chess move or brilliant Go move, but can you can you actually invent chess
+
+276
+00:25:53,600 --> 00:26:00,560
+or something as good as chess or go? And I think one day AI could, but the what's missing is how would
+
+277
+00:26:00,560 --> 00:26:05,840
+you even specify that task to a program right now? And the way I would do it if if I was
+
+278
+00:26:05,840 --> 00:26:10,720
+best to telling a human to do it or games designer, a human game designer to do it is I would say
+
+279
+00:26:10,720 --> 00:26:15,920
+something like Go, I would say come up with a game that only takes five minutes to learn,
+
+280
+00:26:15,920 --> 00:26:20,800
+which Go does because it's got simple rules, but many lifetimes to master, right? Or impossible
+
+281
+00:26:20,800 --> 00:26:26,480
+to master in one lifetime because so deep and so complex. And then it's aesthetically beautiful
+
+282
+00:26:27,360 --> 00:26:32,480
+and also it can be completed in three or four hours of gameplay time, which is, you know,
+
+283
+00:26:32,480 --> 00:26:38,720
+useful for our, you know, in a human day. And so you might specify these side of high-level
+
+284
+00:26:38,720 --> 00:26:44,400
+concepts like that. And then, you know, with that and maybe a few other things, one could imagine
+
+285
+00:26:44,400 --> 00:26:52,480
+that Go satisfies those constraints. But the problem is is that we're not able to specify abstract
+
+286
+00:26:52,480 --> 00:26:58,160
+notions like that, high-level abstract notions like that yet to our AI systems. And I think
+
+287
+00:26:58,160 --> 00:27:02,720
+there's still something missing there in terms of high-level concepts or abstractions that they
+
+288
+00:27:02,720 --> 00:27:08,480
+truly understand and they're, you know, combinable and compositional. So for the moment,
+
+289
+00:27:09,040 --> 00:27:14,000
+I think AI is capable of doing interpolation and extrapolation, but not true invention.
+
+290
+00:27:14,000 --> 00:27:21,120
+So coming up with rulesets and optimizing with complicated objectives around those rulesets,
+
+291
+00:27:21,120 --> 00:27:28,080
+we can't currently do. But you could take a specific rule set and then run a kind of self-play
+
+292
+00:27:28,080 --> 00:27:35,120
+experiment to see how long just observe how an AI system from scratch learns how long is that
+
+293
+00:27:35,120 --> 00:27:40,400
+journey of learning. And maybe if it satisfies some of those other things you mentioned in terms
+
+294
+00:27:40,400 --> 00:27:46,720
+of quickness to learn so on and you could see a long journey to master for even an AI system,
+
+295
+00:27:46,720 --> 00:27:51,600
+then you could say that this is a promising game. But it would be nice to do almost like
+
+296
+00:27:51,600 --> 00:27:58,880
+alpha codes or programming rules. So generating rules that kind of that automate even that part
+
+297
+00:27:58,880 --> 00:28:03,920
+of the generation of rules. So I have thought about systems actually that I think would be amazing
+
+298
+00:28:03,920 --> 00:28:09,920
+in for a game's designer. If you could have a system that takes your game, plays it tens of
+
+299
+00:28:09,920 --> 00:28:15,920
+millions of times, maybe overnight, and then self-balances the rules better. So it tweaks the rules
+
+300
+00:28:15,920 --> 00:28:23,760
+and maybe the equations and the parameters so that the game is more balanced, the units in the game
+
+301
+00:28:23,760 --> 00:28:28,560
+or some of the rules could be tweaked. So it's a bit of like a giving a base set and then
+
+302
+00:28:28,560 --> 00:28:34,160
+allowing Monte Carlo treaser or something like that to sort of explore it. And I think that would
+
+303
+00:28:34,160 --> 00:28:41,520
+be super powerful tool actually for balancing, auto balancing a game, which usually takes thousands
+
+304
+00:28:41,520 --> 00:28:46,400
+of hours from hundreds of games, human games testers normally to to balance one game like
+
+305
+00:28:46,400 --> 00:28:51,120
+StarCraft, which is, you know, Blizzard are amazing at balancing their games, but it takes them
+
+306
+00:28:51,120 --> 00:28:56,240
+years and years and years. So one could imagine at some point when this stuff becomes
+
+307
+00:28:56,240 --> 00:28:58,880
+efficient enough to, you know, you might better do that like overnight.
+
+308
+00:28:59,440 --> 00:29:07,680
+Do you think a game that is optimal design by an AI system would look very much like a planet
+
+309
+00:29:07,680 --> 00:29:13,920
+Earth? So maybe, maybe it's only the sort of game I would love to make is, and I've tried,
+
+310
+00:29:13,920 --> 00:29:18,560
+you know, in my, in my games career, the games design career, you know, my first big game was
+
+311
+00:29:18,560 --> 00:29:24,640
+designing a theme park and amusement park, then with games like Republic, I tried to, you know,
+
+312
+00:29:24,640 --> 00:29:29,360
+have games where we design whole cities and, and allow you to play in. So, and of course,
+
+313
+00:29:29,360 --> 00:29:34,160
+people like Will Wright have written games like Sim Earth, trying to simulate the whole of Earth,
+
+314
+00:29:34,160 --> 00:29:38,560
+pretty tricky, but I say. Sim Earth, I haven't actually played that one. So what is it? Does
+
+315
+00:29:38,560 --> 00:29:43,360
+it incorporate a revolution? Yeah, it has a revolution and it sort of, it tries to,
+
+316
+00:29:43,360 --> 00:29:46,320
+it sort of treats it as an entire biosphere, but from quite high level.
+
+317
+00:29:47,200 --> 00:29:52,160
+So, it'd be nice to be able to sort of zoom in, zoom out. Exactly. Exactly. So obviously,
+
+318
+00:29:52,160 --> 00:29:55,600
+it couldn't do that. That was in the night. I think he wrote that in the 90s. So it couldn't,
+
+319
+00:29:55,600 --> 00:29:59,120
+you know, it wasn't, it wasn't able to do that. But that, that would be, obviously,
+
+320
+00:29:59,120 --> 00:30:04,720
+the ultimate sandbox game, of course. On that topic, do you think we're living in a simulation?
+
+321
+00:30:04,720 --> 00:30:09,760
+Yes. Well, so, okay. So I'm going to jump around from the absurdly philosophical to the
+
+322
+00:30:09,760 --> 00:30:14,000
+detective. Sure. Sure. Very, very happy to. So I think my answer to that question is a little
+
+323
+00:30:14,000 --> 00:30:19,520
+bit complex because there is simulation theory, which obviously Nick Bostrom I think famously
+
+324
+00:30:19,520 --> 00:30:27,440
+first proposed. And I don't quite believe it in that sense. So in the, in the sense that
+
+325
+00:30:27,440 --> 00:30:32,400
+are we in some sort of computer game or have our descendants somehow recreated
+
+326
+00:30:33,600 --> 00:30:38,320
+Earth in the, you know, 21st century and some for some kind of experimental reason.
+
+327
+00:30:38,320 --> 00:30:45,440
+I think that, but I do think that we that that we might be that the best way to understand physics
+
+328
+00:30:45,440 --> 00:30:51,360
+and the universe is from a computational perspective. So understanding it as an information
+
+329
+00:30:51,360 --> 00:30:59,200
+universe and actually information being the most fundamental unit of reality rather than matter
+
+330
+00:30:59,200 --> 00:31:03,840
+or energy. So physicists would say, you know, matter or energy, you know, E equals MC squared. These
+
+331
+00:31:03,840 --> 00:31:08,800
+are the things that are the fundamentals of the universe. I'd actually say information,
+
+332
+00:31:09,680 --> 00:31:14,560
+which of course itself can be, can specify energy or matter, right? Matter is actually just,
+
+333
+00:31:14,560 --> 00:31:18,640
+you know, we're, we're just out the way our bodies and the molecules in our body are arranged
+
+334
+00:31:18,640 --> 00:31:24,880
+as information. So I think information may be the most fundamental way to describe the universe
+
+335
+00:31:24,880 --> 00:31:30,560
+and therefore you could say we're in some sort of simulation because of that. But I don't, I do,
+
+336
+00:31:30,560 --> 00:31:35,440
+I'm not, I'm not really subscriber to the idea that, you know, these are sort of throw away
+
+337
+00:31:35,440 --> 00:31:40,480
+billions of simulations around. I think this is actually very critical and possibly unique
+
+338
+00:31:40,480 --> 00:31:50,240
+this simulation. Yes, but and you just mean treating the universe as a computer that's processing
+
+339
+00:31:50,240 --> 00:31:56,240
+and modifying information is a good way to solve the problems of physics of chemistry of biology
+
+340
+00:31:57,200 --> 00:32:03,520
+and perhaps of humanity and so on. Yes, I think understanding physics in terms of information
+
+341
+00:32:03,520 --> 00:32:08,480
+theory might be the best way to really understand what's going on here.
+
+342
+00:32:08,480 --> 00:32:15,200
+Yeah. From our understanding of a universal term machine, from our understanding of a computer,
+
+343
+00:32:15,200 --> 00:32:20,240
+do you think there's something outside of the capabilities of a computer that is present in
+
+344
+00:32:20,240 --> 00:32:25,440
+our universe? You have a disagreement with Roger Penroval. Yes. The nature of consciousness,
+
+345
+00:32:25,440 --> 00:32:31,200
+he thinks that consciousness is more than just a computation. Do you think all of it,
+
+346
+00:32:31,200 --> 00:32:35,680
+the whole shebang can be, can be a computation? Yeah, I've had many fascinating debates
+
+347
+00:32:35,680 --> 00:32:41,760
+with Roger Penro's and obviously he's famously and I read, you know, Empress in the New Mind and
+
+348
+00:32:42,720 --> 00:32:49,200
+and his books, his classical books and they were pretty influential in the 90s and he believes
+
+349
+00:32:49,200 --> 00:32:54,640
+that there's something more, something quantum that is needed to explain consciousness in the brain.
+
+350
+00:32:55,680 --> 00:33:00,400
+I think of what we're doing actually at DeepMind and what my career is being, we're almost like
+
+351
+00:33:00,400 --> 00:33:06,160
+Turing's champion, so we are pushing Turing machines or classical computation to the limits. What are
+
+352
+00:33:06,160 --> 00:33:13,440
+the limits of what classical computing can do? Now, and at the same time, I've also studied neuroscience
+
+353
+00:33:13,440 --> 00:33:18,240
+to see, and that's why I did my PhD in, was to see also to look at, you know, is there anything
+
+354
+00:33:18,240 --> 00:33:23,680
+quantum in the brain from a neuroscience or biological perspective? And so far, I think most
+
+355
+00:33:23,680 --> 00:33:27,440
+neuroscientists and most mainstream biologists and neuroscientists would say there's no evidence of
+
+356
+00:33:27,440 --> 00:33:33,040
+any quantum systems or effects in the brain. As far as we can see, it can be mostly explained by
+
+357
+00:33:33,040 --> 00:33:40,480
+classical, classical theories. So, and then so there's sort of the search from the biology side
+
+358
+00:33:40,480 --> 00:33:46,160
+and then at the same time, there's the raising of the water at the bar from what classical Turing
+
+359
+00:33:46,160 --> 00:33:55,840
+machines can do and including our new AI systems. And as you alluded to earlier, you know, I think AI,
+
+360
+00:33:55,840 --> 00:34:02,400
+especially in the last decade plus, has been a continual story now, surprising events and
+
+361
+00:34:02,400 --> 00:34:07,360
+surprising successes, knocking over one theory after another, what was thought to be impossible,
+
+362
+00:34:07,360 --> 00:34:15,280
+you know, from go to protein folding and so on. And so I think I would be very hesitant to bet
+
+363
+00:34:15,280 --> 00:34:24,080
+against how far the universal Turing machine and classical computation paradigm can go. And my
+
+364
+00:34:24,080 --> 00:34:30,960
+betting would be that all of certainly what's going on in our brain can probably be mimicked or
+
+365
+00:34:30,960 --> 00:34:38,240
+approximated on a classical machine, not requiring something metaphysical or quantum.
+
+366
+00:34:38,240 --> 00:34:44,320
+And we'll get there with some of the work with Alpha Fold, which I think begins the journey of
+
+367
+00:34:44,320 --> 00:34:49,680
+modeling this beautiful and complex world of biology. So you think all the magic of the human
+
+368
+00:34:49,680 --> 00:34:58,720
+mind comes from this just a few pounds of mush of biological computational mush that's akin
+
+369
+00:34:58,720 --> 00:35:06,000
+to some of the neural networks, not directly, but in spirit that deep mind has been working with.
+
+370
+00:35:06,000 --> 00:35:09,840
+Well, look, I think it's, you say it's a few, you know, of course, this is the, I think,
+
+371
+00:35:09,840 --> 00:35:15,360
+the biggest miracle of the universe is that it is just a few pounds of mush in our skulls. And yet
+
+372
+00:35:15,360 --> 00:35:20,720
+it's also our brains and the most complex objects in that we know of in the universe. So there's
+
+373
+00:35:20,720 --> 00:35:27,600
+something profoundly beautiful and amazing about our brains. And I think that it's an incredibly
+
+374
+00:35:28,560 --> 00:35:37,280
+incredible efficient machine and it's, you know, phenomenon basically. And I think that building AI,
+
+375
+00:35:37,280 --> 00:35:41,520
+one of the reasons I want to build AI and I've always wanted to is I think by building an
+
+376
+00:35:41,520 --> 00:35:48,400
+intelligent artifact like AI and then comparing it to the human mind, that will help us unlock
+
+377
+00:35:48,400 --> 00:35:52,640
+the uniqueness and the true secrets of the mind that we've always wondered about since the dawn
+
+378
+00:35:52,640 --> 00:36:00,640
+of history, like consciousness, dreaming, creativity, emotions, what are all these things, right?
+
+379
+00:36:00,640 --> 00:36:05,840
+We've we've wondered about them since since the dawn of humanity. And I think one of the reasons
+
+380
+00:36:05,840 --> 00:36:10,320
+and you know, I love philosophy and philosophy of mind is we found it difficult is there haven't
+
+381
+00:36:10,320 --> 00:36:15,680
+been the tools for us to really other than introspection to from very clever people in in history,
+
+382
+00:36:15,680 --> 00:36:20,720
+very clever philosophers, to really investigate this scientifically. But now suddenly we have a
+
+383
+00:36:20,720 --> 00:36:24,400
+polethril of tools. Firstly, we have all of the neuroscience tools, FMI machines, single cell
+
+384
+00:36:24,400 --> 00:36:30,800
+recording, all of this stuff. But we also have the ability computers and AI to build intelligent
+
+385
+00:36:30,800 --> 00:36:40,000
+systems. So I think that, you know, I think it is amazing what the human mind does. And and I'm kind
+
+386
+00:36:40,000 --> 00:36:45,120
+of in awe of it really. And I think it's amazing that without human minds, we're able to build
+
+387
+00:36:45,120 --> 00:36:49,760
+things like computers and actually even, you know, think and investigate about these questions.
+
+388
+00:36:49,760 --> 00:36:56,480
+I think that's also testament to the human mind. Yeah. The universe built the human mind that now
+
+389
+00:36:56,480 --> 00:37:01,840
+is building computers that help us understand both the universe and our own human mind. That's right.
+
+390
+00:37:01,840 --> 00:37:06,480
+This is like lid. I mean, I think that's one we, you know, one could say we are maybe we're the
+
+391
+00:37:06,480 --> 00:37:13,040
+mechanism by which the universe is going to try and understand itself. Yeah. It's beautiful.
+
+392
+00:37:13,040 --> 00:37:19,360
+So let's let's go to the basic building blocks of biology that I think is another angle
+
+393
+00:37:19,360 --> 00:37:23,360
+which you can start to understand the human mind, the human body, which is quite fascinating,
+
+394
+00:37:23,360 --> 00:37:29,680
+which is from the basic building blocks, start to simulate, start to model how from those
+
+395
+00:37:29,680 --> 00:37:33,840
+building blocks you can construct bigger and bigger, more complex systems, maybe one day the
+
+396
+00:37:33,840 --> 00:37:40,960
+entirety of the human biology. So here's another problem that thought to be impossible to solve,
+
+397
+00:37:40,960 --> 00:37:49,440
+which is protein folding and alpha fold or specific alpha fold two did just that. It's solved
+
+398
+00:37:49,440 --> 00:37:54,080
+protein folding. I think it's one of the biggest breakthroughs, certainly in the history of
+
+399
+00:37:54,080 --> 00:38:03,440
+structural biology, but in general, in science, maybe from a high level, what is it and how does
+
+400
+00:38:03,440 --> 00:38:11,280
+it work? And then we can ask some fascinating sure questions after sure. So maybe I to explain
+
+401
+00:38:11,280 --> 00:38:15,680
+it to people not familiar with protein folding is, you know, I first of all explain proteins,
+
+402
+00:38:15,680 --> 00:38:20,560
+which is, you know, proteins are essential to all life. Every function in your body depends
+
+403
+00:38:20,560 --> 00:38:25,040
+on proteins. Sometimes they call the workhorses of biology. And if you look into them and I,
+
+404
+00:38:25,040 --> 00:38:29,680
+you know, obviously as part of alpha fold, I've been researching proteins and and and structural
+
+405
+00:38:29,680 --> 00:38:34,640
+biology for the last few years, you know, they're amazing little bio nanomachines proteins,
+
+406
+00:38:34,640 --> 00:38:38,080
+they're incredible. If you actually watch little videos of how they work, animations of how they
+
+407
+00:38:38,080 --> 00:38:44,080
+work. And proteins are specified by their genetic sequence, called their amino acid sequence.
+
+408
+00:38:44,080 --> 00:38:50,560
+So you can think it with their genetic makeup. And then in the body, in nature, they when they
+
+409
+00:38:51,280 --> 00:38:56,000
+fold up into a 3D structure. So you can think of it as a string of beads and then they fold up
+
+410
+00:38:56,000 --> 00:39:02,320
+into a ball. Now the key thing is you want to know what that 3D structure is because the structure,
+
+411
+00:39:02,320 --> 00:39:07,440
+the 3D structure of a protein is what helps to determine what does it do, the function it does
+
+412
+00:39:07,440 --> 00:39:13,120
+in your body. And also if you're interested in drug drugs or disease, you need to understand that
+
+413
+00:39:13,120 --> 00:39:18,000
+3D structure because if you want to target something with a drug compound or about to block
+
+414
+00:39:18,000 --> 00:39:22,560
+something the protein is doing, you need to understand where it's going to bind on the surface of
+
+415
+00:39:22,560 --> 00:39:26,560
+the protein. So obviously, in order to do that, you need to understand the 3D structure.
+
+416
+00:39:26,560 --> 00:39:29,920
+So the structure is mapped to the function? The structure is mapped to the function and the
+
+417
+00:39:29,920 --> 00:39:35,360
+structure is obviously somehow specified by the amino acid sequence. And that's the, in
+
+418
+00:39:35,360 --> 00:39:39,840
+instance, the protein folding problem is, can you just from the amino acid sequence, the one
+
+419
+00:39:39,840 --> 00:39:46,480
+dimensional string of letters, can you immediately computationally predict the 3D structure?
+
+420
+00:39:46,480 --> 00:39:52,320
+Right. And this has been a grand challenge in biology for over 50 years. So I think it was first
+
+421
+00:39:52,320 --> 00:39:58,160
+articulated by Christian and Fienzen, a Nobel Prize winner in 1972 as part of his Nobel Prize
+
+422
+00:39:58,160 --> 00:40:04,000
+winning lecture. And he just speculated this should be possible to go from the amino acid sequence to
+
+423
+00:40:04,000 --> 00:40:10,000
+the 3D structure. But he didn't say how. So I've been described to me as equivalent to Fermat's
+
+424
+00:40:10,000 --> 00:40:15,360
+last theorem, but for biology. You should, as somebody that very well might win the Nobel
+
+425
+00:40:15,360 --> 00:40:20,560
+Prize in the future, but outside of that, you should do more of that kind of thing. In the margins,
+
+426
+00:40:20,560 --> 00:40:26,000
+just put random things, they'll take like 200 years to solve. Set people off at 200 years.
+
+427
+00:40:26,000 --> 00:40:30,080
+Should be possible. Exactly. And just don't give any attention. Exactly. I think everyone's
+
+428
+00:40:30,080 --> 00:40:34,720
+exactly should be, I'll have to remember that for future. So yeah, so he set off, you know,
+
+429
+00:40:34,720 --> 00:40:39,520
+with this one very way remark, just like Fermat, you know, he, he set off this whole 50-age
+
+430
+00:40:39,520 --> 00:40:46,560
+field, really, of computation of biology. And they had, you know, they got stuck. They hadn't
+
+431
+00:40:46,560 --> 00:40:52,880
+really got very far with doing this. And until now, until AlphaFull came along, this is done
+
+432
+00:40:52,880 --> 00:40:57,920
+experimentally, right, very painstakingly. So the rule of thumb is, and you have to crystallize
+
+433
+00:40:57,920 --> 00:41:02,960
+the protein, which is really difficult. Some proteins can't be crystallized like membrane proteins.
+
+434
+00:41:02,960 --> 00:41:08,160
+And then you have to use very expensive electron microscopes or x-ray crystallography machines,
+
+435
+00:41:08,160 --> 00:41:12,240
+really painstaking work to get the 3D structure and visualize the 3D structure.
+
+436
+00:41:12,240 --> 00:41:16,720
+So the rule of thumb in, in, in experimental biology is that it takes one PhD student,
+
+437
+00:41:16,720 --> 00:41:23,760
+their entire PhD to do one protein. And with AlphaFull 2, we were able to predict the 3D
+
+438
+00:41:23,760 --> 00:41:29,520
+structure in a matter of seconds. And so we were, you know, over Christmas, we did the whole human
+
+439
+00:41:29,520 --> 00:41:34,080
+proteome, or every protein in the human body, or 20,000 proteins. So the human proteomes,
+
+440
+00:41:34,080 --> 00:41:39,760
+like the equivalent of the human genome, but on protein space. And, and sort of revolutionize
+
+441
+00:41:39,760 --> 00:41:46,800
+really what a structural biologists can do. Because now, they don't have to worry about these painstaking
+
+442
+00:41:46,800 --> 00:41:50,400
+experimentals, you know, should they put all of that effort in or not, they can almost just look
+
+443
+00:41:50,400 --> 00:41:55,440
+up the structure of their proteins like a Google search. And so there's a data set on which it's
+
+444
+00:41:56,080 --> 00:42:00,640
+trained and how to map this amino acid season. First of all, it's incredible that approaching
+
+445
+00:42:00,640 --> 00:42:04,960
+this little chemical computer is able to do that computation itself in some kind of distributed
+
+446
+00:42:04,960 --> 00:42:10,320
+way and do it very quickly. That's a weird thing. And they evolved that way because, you know,
+
+447
+00:42:10,320 --> 00:42:14,240
+in the beginning, I mean, that's a great invention, just the protein itself.
+
+448
+00:42:14,240 --> 00:42:20,160
+Yes. I mean, and then there's, I think, probably a history of, like, they evolved
+
+449
+00:42:21,040 --> 00:42:26,000
+to have many of these proteins. And those proteins figure out how to be computers themselves.
+
+450
+00:42:26,000 --> 00:42:30,320
+So in such a way that you can create structures that can interact in complex areas with each other,
+
+451
+00:42:30,320 --> 00:42:35,360
+in order to form high-level functions. I mean, it's a weird system that they figured it out.
+
+452
+00:42:35,360 --> 00:42:38,800
+Well, for sure. I mean, we, you know, maybe we should talk about the origins of life, too,
+
+453
+00:42:38,800 --> 00:42:45,600
+but proteins themselves, I think, are magical and incredible, as I said, little bio-nana machines.
+
+454
+00:42:46,800 --> 00:42:52,400
+And actually, Leventhal, who is another scientist, a contemporary of Amphinson,
+
+455
+00:42:53,120 --> 00:42:57,920
+he coined this Leventhal, what became known as Leventhal's paradox, which is exactly what you're
+
+456
+00:42:57,920 --> 00:43:03,920
+saying. He calculated roughly a protein, an average protein, which is maybe 2,000 amino acids
+
+457
+00:43:03,920 --> 00:43:11,280
+based as long, is, is, can fold in maybe 10 to the power 300 different conformations.
+
+458
+00:43:11,280 --> 00:43:15,760
+So there's 10 to the power 300 different ways that protein could fold up. And yet somehow,
+
+459
+00:43:15,760 --> 00:43:21,440
+in nature, physics solves this, solves this in a matter of milliseconds. So proteins fold up in
+
+460
+00:43:21,440 --> 00:43:29,040
+your body, sometimes in fractions of a second. So physics is somehow solving that search problem.
+
+461
+00:43:29,040 --> 00:43:34,240
+And just to be clear, in many of these cases, maybe correctly if I'm wrong, there's often a unique
+
+462
+00:43:34,240 --> 00:43:41,760
+way for that sequence to form itself. So among that huge number of possibilities, it figures out
+
+463
+00:43:41,760 --> 00:43:48,880
+a way, how to stably, in some cases, there might be a dysfunction, which leads to a lot of the
+
+464
+00:43:48,880 --> 00:43:53,280
+disorders and stuff like that. But yes, most of the time it's a unique mapping and that unique
+
+465
+00:43:53,280 --> 00:43:58,240
+mapping is not obvious. No, exactly. Which is what the problem is. Exactly. So there's a unique
+
+466
+00:43:58,240 --> 00:44:04,640
+mapping usually in a healthy, if it's healthy. And as you say in disease, so for example,
+
+467
+00:44:04,640 --> 00:44:09,840
+Alzheimer's, one conjecture is that it's because of a misfolder protein, a protein that folds in
+
+468
+00:44:09,840 --> 00:44:15,120
+the wrong way, amyloid beta protein. And then because it folds in the wrong way, it gets tangled
+
+469
+00:44:15,120 --> 00:44:23,040
+up in your neurons. So it's super important to understand both healthy functioning and also
+
+470
+00:44:23,040 --> 00:44:27,840
+disease is to understand what these things are doing and how they're structuring. Of course,
+
+471
+00:44:27,840 --> 00:44:33,120
+the next step is sometimes proteins change shape when they interact with something. So they're not
+
+472
+00:44:33,120 --> 00:44:41,280
+just static necessarily in biology. Maybe you can give some interesting beautiful things to you
+
+473
+00:44:41,280 --> 00:44:48,000
+about these early days of alpha fold of of solving this problem because unlike games,
+
+474
+00:44:48,000 --> 00:44:55,440
+this is real physical systems that are less amenable to self-play type of mechanisms.
+
+475
+00:44:56,240 --> 00:45:00,800
+The size of the data set is smaller than you might otherwise like. You have to be very clever
+
+476
+00:45:00,800 --> 00:45:06,800
+about certain things. Is there something you could speak to what was very hard to solve and
+
+477
+00:45:06,800 --> 00:45:12,800
+what are some beautiful aspects about the solution? I would say alpha fold is the most complex and
+
+478
+00:45:12,800 --> 00:45:17,680
+also probably most meaningful system we've built so far. So it's been an amazing time actually in
+
+479
+00:45:17,680 --> 00:45:23,600
+the last two, three years to see that come through because as we talked about earlier, games is what
+
+480
+00:45:23,600 --> 00:45:29,600
+we started on, building things like alpha-go and alpha-zero. But really, the ultimate goal was to
+
+481
+00:45:30,320 --> 00:45:35,200
+not just to crack games, it was just to build, use them to bootstrap general learning systems,
+
+482
+00:45:35,200 --> 00:45:40,560
+we could then apply to real world challenges. Specifically, my passion is scientific challenges
+
+483
+00:45:40,560 --> 00:45:45,120
+like protein folding. And then alpha fold, of course, is our first big proof point of that.
+
+484
+00:45:45,120 --> 00:45:50,800
+And so in terms of the data and the amount of innovations that had to go into it,
+
+485
+00:45:50,800 --> 00:45:56,640
+it was more than 30 different component algorithms needed to be put together to crack the protein
+
+486
+00:45:56,640 --> 00:46:04,080
+folding. I think some of the big innovations were the kind of building in some hard coded constraints
+
+487
+00:46:04,080 --> 00:46:10,160
+around physics and evolutionary biology to constrain sort of things like the bond angles
+
+488
+00:46:11,520 --> 00:46:19,280
+in the protein and things like that, but not to impact the learning system. So still allowing
+
+489
+00:46:19,280 --> 00:46:25,760
+the system to be able to learn the physics itself from the examples that we had. And the
+
+490
+00:46:25,760 --> 00:46:31,040
+examples, as you say, they're only about 150,000 proteins, even after 40 years of experimental biology,
+
+491
+00:46:31,040 --> 00:46:36,400
+only around 150,000 proteins have been, the structures have been found out about. So that was our
+
+492
+00:46:36,400 --> 00:46:42,160
+training set, which is much less than normally we would like to use, but using various tricks,
+
+493
+00:46:42,160 --> 00:46:49,360
+things like self distillation. So actually using alpha fold predictions, some of the best predictions
+
+494
+00:46:49,360 --> 00:46:53,600
+that it thought was highly confident in, we put them back into the training set, right, to make the
+
+495
+00:46:53,600 --> 00:47:00,000
+training set bigger. That was critical to alpha fold working. So there was actually a huge number
+
+496
+00:47:00,000 --> 00:47:06,240
+of different innovations like that that were required to ultimately crack the problem. Alpha
+
+497
+00:47:06,240 --> 00:47:13,520
+fold one, what it produced was a histogram, so a kind of a matrix of the pairwise distances
+
+498
+00:47:13,520 --> 00:47:19,760
+between all of the molecules in the protein. And then there had to be a separate optimization
+
+499
+00:47:19,760 --> 00:47:26,800
+process to create the 3D structure. And what we did for alpha fold two is make it truly end-to-end.
+
+500
+00:47:26,800 --> 00:47:34,080
+So we went straight from the amino acid sequence of bases to the 3D structure directly without
+
+501
+00:47:34,080 --> 00:47:38,880
+going through this intermediate step. And in machine learning, what we've always found is that
+
+502
+00:47:38,880 --> 00:47:43,280
+the more end-to-end you can make it, the better the system. And it's probably because
+
+503
+00:47:44,320 --> 00:47:49,520
+we, you know, in the end, the system's better at learning what the constraints are than we are
+
+504
+00:47:49,520 --> 00:47:54,240
+as the human designers of specifying it. So anytime you can let it flow end-to-end and actually
+
+505
+00:47:54,240 --> 00:47:58,720
+just generate what it is you're really looking for. In this case, the 3D structure, you're better
+
+506
+00:47:58,720 --> 00:48:03,200
+off than having this intermediate step, which you then have to handcraft the next step for.
+
+507
+00:48:03,200 --> 00:48:07,760
+So it's better to let the gradients and the learning flow all the way through the system
+
+508
+00:48:07,760 --> 00:48:11,840
+from the end point, the end output you want to the inputs. So that's a good way to start
+
+509
+00:48:11,840 --> 00:48:17,120
+on a new problem. Handcraft, a bunch of stuff, add a bunch of manual constraints with a small
+
+510
+00:48:17,120 --> 00:48:21,920
+end-to-end learning piece or a small learning piece and grow that learning piece until it
+
+511
+00:48:21,920 --> 00:48:26,160
+consumes the whole thing. That's right. And so you can also see, you know, this is a bit of a method
+
+512
+00:48:26,160 --> 00:48:31,840
+we've developed over doing many sort of successful outfits. We call them Alpha X projects, right?
+
+513
+00:48:31,840 --> 00:48:39,120
+And the easiest way to see that is the evolution of Alpha Go to Alpha Zero. So Alpha Go was a learning
+
+514
+00:48:39,120 --> 00:48:44,160
+system, but it was specifically trained to only play Go, right? So and what we wanted to do in
+
+515
+00:48:44,160 --> 00:48:48,880
+with first version of Alpha Go is just get to world champion performance no matter how we did it,
+
+516
+00:48:48,880 --> 00:48:54,240
+right? And then, and then of course Alpha Go Zero, we remove the need to use human games as a
+
+517
+00:48:54,240 --> 00:48:59,520
+starting point, right? So it could just play against itself from random starting point from
+
+518
+00:48:59,520 --> 00:49:04,960
+the beginning. So that removed the need for human knowledge about Go. And then finally Alpha Zero
+
+519
+00:49:04,960 --> 00:49:10,000
+then generalized it so that any things we had in there, the system, including things like symmetry
+
+520
+00:49:10,000 --> 00:49:15,520
+of the Go board, were removed. So that Alpha Zero could play from scratch any two-player game,
+
+521
+00:49:15,520 --> 00:49:19,520
+and then Mu Zero, which is the final, that our latest version of that set of things,
+
+522
+00:49:19,520 --> 00:49:23,600
+was then extending it so that you didn't even have to give it the rules of the game. It would
+
+523
+00:49:23,600 --> 00:49:27,600
+learn that for itself. So it could also deal with computer games as well as board games.
+
+524
+00:49:27,600 --> 00:49:34,400
+So that line of Alpha Go, Alpha Go Zero, Mu Zero, that's the full trajectory of what you can take from
+
+525
+00:49:35,440 --> 00:49:44,000
+imitation learning to full self-supervised learning. Yeah. Exactly. And learning, learning the entire
+
+526
+00:49:44,000 --> 00:49:50,480
+structure of the environment you put in from scratch, right? And bootstrapping it through self-play
+
+527
+00:49:51,040 --> 00:49:55,120
+yourself. But the thing is, it would have been impossible, I think, or very hard for us to build
+
+528
+00:49:55,120 --> 00:50:00,240
+Alpha Zero or Mu Zero first out of the box. Even psychologically, because you have to
+
+529
+00:50:00,880 --> 00:50:05,120
+believe in yourself for a very long time, you're constantly dealing with doubt, because a lot of
+
+530
+00:50:05,120 --> 00:50:09,120
+people say that it's impossible. Exactly. So it was hard enough just to do Go as you were saying,
+
+531
+00:50:09,120 --> 00:50:14,240
+everyone thought that was impossible, or at least a decade away from when we, when we did it in back
+
+532
+00:50:14,240 --> 00:50:21,920
+in 2015, 2014, 2016. And so, yes, it would have been psychologically probably very difficult,
+
+533
+00:50:21,920 --> 00:50:26,240
+as well as the fact that, of course, we learned a lot by building Alpha Go first.
+
+534
+00:50:26,240 --> 00:50:30,320
+Right? So I think this is why I call AI an engineering science. It's one of the most
+
+535
+00:50:30,320 --> 00:50:34,560
+fascinating science disciplines, but it's also an engineering science in the sense that,
+
+536
+00:50:34,560 --> 00:50:39,760
+unlike natural sciences, the phenomenon you're studying doesn't exist out in nature. You have to
+
+537
+00:50:39,760 --> 00:50:45,280
+build it first. So you have to build the artifact first, and then you can study how and pull it apart
+
+538
+00:50:45,280 --> 00:50:51,360
+and how it works. This is tough to ask you this question because you probably will say it's everything,
+
+539
+00:50:51,360 --> 00:50:56,320
+but let's try, let's try to think through this, because you're in a very interesting position,
+
+540
+00:50:56,320 --> 00:51:01,600
+where deep mind is a place of some of the most brilliant ideas in the history of AI,
+
+541
+00:51:01,600 --> 00:51:08,960
+but it's also a place of brilliant engineering. So how much of solving intelligence, this big goal
+
+542
+00:51:08,960 --> 00:51:14,560
+for deep mind? How much of it is science? How much is engineering? So how much is the algorithms?
+
+543
+00:51:14,560 --> 00:51:21,280
+How much is the data? How much is the hardware compute infrastructure? How much is it the software
+
+544
+00:51:21,280 --> 00:51:26,400
+compute infrastructure? What else is there? How much is the human infrastructure?
+
+545
+00:51:26,400 --> 00:51:31,600
+And just the humans interacting in certain kinds of ways, in all the space of all those ideas,
+
+546
+00:51:31,600 --> 00:51:42,080
+how much is maybe philosophy? What's the key? If you were to look back, if we go forward
+
+547
+00:51:42,080 --> 00:51:46,960
+to 100 years and look back, what was the key thing that solved intelligence? Is that ideas?
+
+548
+00:51:46,960 --> 00:51:51,200
+I think it's a combination. I first of all, of course, it's a combination of all those things,
+
+549
+00:51:51,200 --> 00:51:58,080
+but the ratios of them changed over time. So even in the last 12 years, we started deep
+
+550
+00:51:58,080 --> 00:52:03,200
+mind in 2010, which is hard to imagine now, because 2010, it's only 12 short years ago,
+
+551
+00:52:03,200 --> 00:52:07,920
+but nobody was talking about AI. I don't know if you remember back to your MIT days. No one was
+
+552
+00:52:07,920 --> 00:52:12,720
+talking about it. I did a post-doc at MIT back around then, and it was sort of thought of as,
+
+553
+00:52:12,720 --> 00:52:16,960
+well, look, we know AI doesn't work. We tried this hard in the 90s at places like MIT,
+
+554
+00:52:16,960 --> 00:52:21,440
+mostly losing, using logic systems and old-fashioned sort of good old-fashioned AI. We would call
+
+555
+00:52:21,440 --> 00:52:26,960
+it now. People like Minsky and Patrick Winston, and you know all these characters, right? And
+
+556
+00:52:26,960 --> 00:52:30,560
+used to debate a few of them, and they used to think I was mad, thinking about that some new
+
+557
+00:52:30,560 --> 00:52:34,960
+advance could be done with learning systems. I was actually pleased to hear that, because at
+
+558
+00:52:34,960 --> 00:52:40,000
+least you know you're on a unique track at that point, right? Even if all of your professors
+
+559
+00:52:40,000 --> 00:52:44,640
+are telling you you're mad. And of course, in industry, we couldn't get, you know,
+
+560
+00:52:44,640 --> 00:52:48,800
+it was difficult to get two cents together, and which is hard to imagine now as well,
+
+561
+00:52:48,800 --> 00:52:53,600
+given that it's the biggest sort of buzzword in VCs and fundraising's easy and all these kind
+
+562
+00:52:53,600 --> 00:52:59,200
+of things today. So back in 2010, it was very difficult. And the reason we started then,
+
+563
+00:52:59,200 --> 00:53:04,720
+and Shane and I used to discuss what were the sort of founding tenants of DeepMind,
+
+564
+00:53:04,720 --> 00:53:10,320
+and it was various things. One was algorithmic advances. So Deep Learning, you know, Jeff Hinton and
+
+565
+00:53:10,320 --> 00:53:15,440
+Coa just had just sort of invented that in academia, but no one in industry knew about it. We
+
+566
+00:53:15,440 --> 00:53:19,280
+love reinforcement learning. We thought that could be scaled up, but also understanding about
+
+567
+00:53:19,280 --> 00:53:25,280
+the human brain had advanced quite a lot in the decade prior with FMRI machines and other things.
+
+568
+00:53:25,280 --> 00:53:32,320
+So we could get some good hints about architectures and algorithms and sort of representations maybe
+
+569
+00:53:32,320 --> 00:53:38,160
+that the brain uses. So as at a systems level, not at a implementation level. And then the other
+
+570
+00:53:38,160 --> 00:53:44,000
+big things were compute and GPUs, right? So we could see a compute was going to be really useful
+
+571
+00:53:44,000 --> 00:53:48,400
+and it got to a place where it become commoditized mostly through the games industry,
+
+572
+00:53:48,400 --> 00:53:53,280
+and that could be taken advantage of. And then the final thing was also mathematical and theoretical
+
+573
+00:53:53,280 --> 00:53:59,520
+definitions of intelligence. So things like AIXI, which Shane worked on with his supervisor,
+
+574
+00:53:59,520 --> 00:54:05,760
+Marcus Huto, which is sort of theoretical proof really of universal intelligence, which is actually
+
+575
+00:54:05,760 --> 00:54:10,240
+a reinforcement learning system in the limit. I mean, it seems infinite compute and infinite
+
+576
+00:54:10,240 --> 00:54:14,640
+memory in the way, you know, like a Turing machine proof. But I was also waiting to see something
+
+577
+00:54:14,640 --> 00:54:20,320
+like that too, to, you know, like Turing machines and computation theory that people like Turing
+
+578
+00:54:20,320 --> 00:54:25,920
+and Shannon came up with, underpins modern computer science. You know, I was waiting for a theory
+
+579
+00:54:25,920 --> 00:54:31,280
+like that to sort of underpin a GI research. So when I met Shane and saw he was working on something
+
+580
+00:54:31,280 --> 00:54:36,320
+like that, you know, that to me was a sort of final piece of the jigsaw. So in the early days,
+
+581
+00:54:36,320 --> 00:54:42,400
+I would say that ideas were the most important, you know, for us, it was deeply enforcement learning,
+
+582
+00:54:42,400 --> 00:54:48,000
+scaling up deep learning. Of course, we've seen transformers. So huge leaps, I would say, you know,
+
+583
+00:54:48,000 --> 00:54:53,360
+three or four from, if you think from 2010 till now, huge evolution, things like AlphaGo.
+
+584
+00:54:53,360 --> 00:55:03,680
+And maybe there's a few more still needed. But as we get closer to AI, a GI, I think engineering
+
+585
+00:55:03,680 --> 00:55:08,960
+becomes more and more important and data because scale and of course, the recent, you know, results
+
+586
+00:55:08,960 --> 00:55:13,920
+of GPT-3 and all the big language models and large models, including our ones, has shown that
+
+587
+00:55:13,920 --> 00:55:20,880
+scale is and large models are clearly going to be a necessary, but perhaps not sufficient part of
+
+588
+00:55:20,880 --> 00:55:27,120
+an AGI solution. And throughout that, like you said, and I'd like to give you a big thank you,
+
+589
+00:55:27,120 --> 00:55:33,040
+you're one of the pioneers in this is sticking by ideas like reinforcement learning that this can
+
+590
+00:55:33,040 --> 00:55:41,920
+actually work, given actually limited success in the past, and also, which we still don't know,
+
+591
+00:55:41,920 --> 00:55:49,760
+but proudly having the best researchers in the world and talking about solving intelligence.
+
+592
+00:55:49,760 --> 00:55:55,120
+So talking about whatever you call it, AGI or something like this, that speaking of MIT,
+
+593
+00:55:55,120 --> 00:56:03,280
+that's just something that you wouldn't bring up. Not maybe you did in like 40, 50 years ago,
+
+594
+00:56:04,000 --> 00:56:12,960
+but that was AI was a place where you do tinkering, very small scale, not very ambitious projects,
+
+595
+00:56:12,960 --> 00:56:18,800
+and maybe the biggest ambitious projects were in the space of robotics and doing like the DARPA
+
+596
+00:56:18,800 --> 00:56:24,080
+challenge, but the task of solving intelligence and believing you can. That's really,
+
+597
+00:56:24,080 --> 00:56:30,720
+really powerful. So in order for engineering to do its work, to have great engineers build great
+
+598
+00:56:30,720 --> 00:56:34,960
+systems, you have to have that belief that threads throughout the whole thing that you can actually
+
+599
+00:56:34,960 --> 00:56:40,000
+solve some of these impossible challenges. Yeah, that's right. And back in 2010, our mission
+
+600
+00:56:40,000 --> 00:56:45,840
+statement and still is today, it was used to be solving step one, solve intelligence,
+
+601
+00:56:45,840 --> 00:56:50,720
+step two, use it to solve everything else. So if you can imagine pitching that to a VC in 2010,
+
+602
+00:56:50,720 --> 00:56:55,760
+you know, the kind of looks we got, we managed to, you know, find a few kooky people to back us,
+
+603
+00:56:55,760 --> 00:57:00,880
+but it was, it was tricky. And I got to the point where we wouldn't mention it to any of our
+
+604
+00:57:00,880 --> 00:57:06,160
+professors, because they were just I-roll and think we, you know, committed career suicide. And,
+
+605
+00:57:06,160 --> 00:57:11,440
+and, and, you know, so it was, there's a lot of things that we had to do, but we always believed it.
+
+606
+00:57:11,440 --> 00:57:15,680
+And one reason, you know, by the way, one reason we, I believe, I've always believed in reinforcement
+
+607
+00:57:15,680 --> 00:57:21,360
+learning is that that, if you look at neuroscience, that is the way that the, you know,
+
+608
+00:57:21,360 --> 00:57:24,800
+primate brain learns. One of the main mechanisms is the dopamine system,
+
+609
+00:57:24,800 --> 00:57:30,400
+implement some form of TD learning, as very famous result in the late 90s, where they saw this in
+
+610
+00:57:30,400 --> 00:57:36,080
+monkeys. And, and as, you know, probably getting prediction error. So, you know, again, in the
+
+611
+00:57:36,080 --> 00:57:40,160
+limit, this is, this is what I think you can use neuroscience for is, is, you know, any,
+
+612
+00:57:40,160 --> 00:57:43,600
+and mathematics. You, when you're, when you're doing something as ambitious as trying to solve
+
+613
+00:57:43,600 --> 00:57:48,480
+intelligence, and you're, you know, it's blue sky research, no one knows how to do it. You, you,
+
+614
+00:57:48,480 --> 00:57:53,760
+you need to use any evidence or any source of information you can to help guide you in the right
+
+615
+00:57:53,760 --> 00:57:58,000
+direction, or give you confidence you're going in the right direction. So, so that, that was one
+
+616
+00:57:58,000 --> 00:58:01,680
+reason we pushed so hard on that. And that's, and it's just going back to your early question
+
+617
+00:58:01,680 --> 00:58:07,040
+about organization. The other big thing that I think we innovated with at DeepMind to encourage
+
+618
+00:58:07,040 --> 00:58:12,800
+invention and, and, and, and innovation was the multidisciplinary organization we built,
+
+619
+00:58:12,800 --> 00:58:17,840
+and we still have today. So, DeepMind originally was a confluence of the, of the most cutting
+
+620
+00:58:17,840 --> 00:58:22,720
+edge knowledge in neuroscience with machine learning, engineering, and mathematics, right,
+
+621
+00:58:22,720 --> 00:58:27,520
+and, and gaming. And then since then we've built that out even further. So, we have philosophers
+
+622
+00:58:27,520 --> 00:58:33,040
+here and, and, by, you know, ethicists, but also other types of scientists, physicists, and so on.
+
+623
+00:58:33,040 --> 00:58:38,560
+And that's what brings together. I tried to build a sort of, um, new type of Bell labs,
+
+624
+00:58:38,560 --> 00:58:45,520
+but in its golden era, right? And, and a new expression of that, um, to try and, uh, foster
+
+625
+00:58:45,520 --> 00:58:50,000
+this incredible sort of innovation machine. So, talking about the humans in the machine,
+
+626
+00:58:50,000 --> 00:58:56,240
+DeepMind itself is a learning machine with a lot of amazing human minds in it, um, coming together
+
+627
+00:58:56,240 --> 00:59:04,000
+to try and build these, uh, learning systems. If we return to the big ambitious dream of
+
+628
+00:59:04,000 --> 00:59:10,400
+AlphaFold, that maybe the early steps, uh, very long journey in, um, in biology,
+
+629
+00:59:12,480 --> 00:59:16,400
+do you think the same kind of approach can use to predict the structure and function of
+
+630
+00:59:16,400 --> 00:59:23,600
+more complex biological systems? So, multi-protein interaction, and then, I mean, you can go out from
+
+631
+00:59:23,600 --> 00:59:28,560
+there. Yeah. Just simulating bigger and bigger systems that eventually simulate something like
+
+632
+00:59:28,560 --> 00:59:35,360
+the human brain or the human body, just the big mush, the mess of the beautiful resilient
+
+633
+00:59:35,360 --> 00:59:41,600
+mess of biology. Do you see that as a long-term vision? I do. And I think, um, you know,
+
+634
+00:59:41,600 --> 00:59:46,560
+if you think about what are the things, top things I wanted to apply AI to, once we had powerful
+
+635
+00:59:46,560 --> 00:59:52,960
+enough systems, biology and curing diseases and understanding biology, uh, was right up there,
+
+636
+00:59:52,960 --> 00:59:57,840
+you know, top of my list. That's one of the reasons I personally pushed that myself and with AlphaFold.
+
+637
+00:59:57,840 --> 01:00:04,480
+But I think AlphaFold, uh, amazing as it is, is just the beginning, um, and, and, and I hope it's
+
+638
+01:00:04,480 --> 01:00:10,960
+an evidence of, uh, what could be done with computational methods. So, um, you know, AlphaFold solved
+
+639
+01:00:10,960 --> 01:00:15,760
+this, this huge problem of, of the structure of proteins, but biology is dynamic. So really,
+
+640
+01:00:15,760 --> 01:00:20,400
+what I imagine from here, and we're working on all these things now, is protein protein interaction,
+
+641
+01:00:20,400 --> 01:00:26,240
+uh, protein ligand binding. So, uh, reacting with molecules, um, then you want to get built up
+
+642
+01:00:26,240 --> 01:00:32,080
+to pathways and then pinch eventually a virtual cell. That's my dream, uh, maybe in the next 10
+
+643
+01:00:32,080 --> 01:00:35,760
+years. And I've been talking actually to a lot of biologists, friends of mine, Paul Nurse, who runs
+
+644
+01:00:35,760 --> 01:00:39,840
+the quick institute, amazing biologist, nervous prize-winning biologists. We've been discussing for
+
+645
+01:00:39,840 --> 01:00:45,120
+20 years now, virtual cells. Could you build a virtual simulation of a cell? And if you could,
+
+646
+01:00:45,120 --> 01:00:49,360
+that would be incredible for biology and disease discovery because you could do loads of experiments
+
+647
+01:00:49,360 --> 01:00:54,480
+on the virtual cell and then only at the last stage validate it in the wet lab. So you could,
+
+648
+01:00:54,480 --> 01:00:58,720
+you know, that in terms of the search space of discovering new drugs, you know, takes 10 years
+
+649
+01:00:58,720 --> 01:01:05,280
+roughly to go from, uh, to, to go from a, you know, identifying a target to, uh, having a drug
+
+650
+01:01:05,280 --> 01:01:10,000
+candidate. Um, maybe that could be shortened to, you know, by an order of magnitude with, if you could
+
+651
+01:01:10,000 --> 01:01:16,560
+do most of that, that, that work in silico. So in order to get to a virtual cell, we have to build up,
+
+652
+01:01:16,560 --> 01:01:21,920
+uh, understanding of different parts of biology and the interactions. And, and, um, so we, you know,
+
+653
+01:01:21,920 --> 01:01:25,680
+we, every, every few years we talk about this with, we, I talked about this with Paul, and then
+
+654
+01:01:25,680 --> 01:01:31,280
+finally, last year after AlphaFold, I said, now's the time we can finally go for it. And, and AlphaFold
+
+655
+01:01:31,280 --> 01:01:35,120
+was the first proof point that this might be possible. Uh, and he's very exciting. We have some
+
+656
+01:01:35,120 --> 01:01:38,800
+collaborations with his, with his lab, and they're just across the road actually from us,
+
+657
+01:01:38,800 --> 01:01:42,320
+as a, you know, wonderful being here in Kings Cross with the quick institute across the road.
+
+658
+01:01:42,320 --> 01:01:47,280
+And, um, and I think the next steps, you know, I think there's going to be some amazing
+
+659
+01:01:47,280 --> 01:01:51,760
+advances in biology built on top of things like AlphaFold. Uh, we're already seeing that with
+
+660
+01:01:51,760 --> 01:01:57,040
+the community doing that after we've open sourced it and released it. Um, and, uh, you know,
+
+661
+01:01:57,040 --> 01:02:02,720
+I often, I often say that I think, uh, if you think of, uh, mathematics is the perfect
+
+662
+01:02:02,720 --> 01:02:07,520
+description language for physics. Uh, I think AI might be end up being the perfect description
+
+663
+01:02:07,520 --> 01:02:14,400
+language for biology because, um, biology is so messy, it's so emergent, so dynamic and complex.
+
+664
+01:02:14,960 --> 01:02:18,880
+Um, I think I find it very hard to believe we'll ever get to something as elegant as Newton's
+
+665
+01:02:18,880 --> 01:02:24,560
+laws of motions to describe a cell, right? It's just too complicated. Um, so I think AI is the
+
+666
+01:02:24,560 --> 01:02:29,280
+right tool for that. So you have to, um, you have to start at the basic building blocks
+
+667
+01:02:29,280 --> 01:02:35,040
+and use AI to run the simulation for how those building blocks. So have a very strong way to
+
+668
+01:02:35,040 --> 01:02:39,920
+do prediction of what given these building blocks, what kind of biology, how the, the function
+
+669
+01:02:40,640 --> 01:02:45,760
+and the evolution of that biological system. It's almost like a cellular automata. You have to run,
+
+670
+01:02:45,760 --> 01:02:50,240
+you can't analyze it from a high level. You have to take the basic ingredients, figure out the
+
+671
+01:02:50,240 --> 01:02:54,880
+rules and let it run. But in this case, the rules are very difficult to figure out. Yes,
+
+672
+01:02:54,880 --> 01:02:59,840
+yes. Learn them. That's exactly it. So it's, the biology is too complicated to figure out the
+
+673
+01:02:59,840 --> 01:03:05,600
+rules. It's, it's too emergent, too dynamic, say, compared to a physics system, like the motion
+
+674
+01:03:05,600 --> 01:03:10,720
+of a planet, right? And, and so you have to learn the rules. And that's exactly the type of systems
+
+675
+01:03:10,720 --> 01:03:16,400
+that we're building. So you, you mentioned you've open sourced Alpha Fold and even the data involved
+
+676
+01:03:16,400 --> 01:03:22,320
+to me personally, also really happy and a big thank you for open sourcing, Majoko,
+
+677
+01:03:23,280 --> 01:03:28,880
+the physics simulation engine that's, um, that's often used for robotics research and so on.
+
+678
+01:03:28,880 --> 01:03:34,400
+So I think that's a pretty gangster move. Uh, so what, what's the, what's, I mean, this, uh,
+
+679
+01:03:35,200 --> 01:03:41,040
+very few companies or people do that kind of thing. What's the philosophy behind that?
+
+680
+01:03:41,040 --> 01:03:45,920
+You know, it's a case by case basis. And in both those cases, we felt that was the maximum benefit
+
+681
+01:03:45,920 --> 01:03:51,680
+to humanity to do that. And, and the scientific community, in one case, the robotics, uh, physics
+
+682
+01:03:51,680 --> 01:03:57,040
+community with Majoko. So we purchased it. Open four. Yes, we purchased it for the express
+
+683
+01:03:57,040 --> 01:04:02,640
+principle to open sourced. So, um, so, uh, you know, I hope people appreciate that. It's great
+
+684
+01:04:02,640 --> 01:04:07,280
+to hear that, that you do. And then the second thing was, and mostly we did it because the person
+
+685
+01:04:07,280 --> 01:04:11,760
+building it, who's, uh, uh, would not able, was not able to cope with supporting it anymore,
+
+686
+01:04:11,760 --> 01:04:16,320
+because it was, it got too big for him. It's amazing professor, uh, who, who built it in the first
+
+687
+01:04:16,320 --> 01:04:20,320
+place. So we helped him out with that. And then with Alpha Fold is even bigger, I would say.
+
+688
+01:04:20,320 --> 01:04:25,840
+And I think in that case, we decided that there were so many downstream applications of Alpha
+
+689
+01:04:25,840 --> 01:04:32,320
+Fold, um, that we couldn't possibly even imagine what they all were. So the best way to accelerate,
+
+690
+01:04:33,200 --> 01:04:39,680
+drug discovery and also fundamental research would be to, to, um, give all that data away and,
+
+691
+01:04:39,680 --> 01:04:45,280
+and, and the, and the, and the system itself. Um, you know, it's been so gratifying to see what
+
+692
+01:04:45,280 --> 01:04:50,000
+people have done that within just one year, which is a short amount of time in science. And, uh,
+
+693
+01:04:50,000 --> 01:04:55,120
+it's been used by over 500,000 researchers have used it. We think that's almost every
+
+694
+01:04:55,120 --> 01:04:59,120
+biologist in the world. I think there's roughly 500,000 biologists in the world, professional
+
+695
+01:04:59,120 --> 01:05:05,120
+biologists have used it to, to look at their, um, proteins of interest. Um, we see an amazing
+
+696
+01:05:05,120 --> 01:05:09,680
+fundamental research done. So, uh, a couple of weeks ago, front cover, there was a whole special
+
+697
+01:05:09,680 --> 01:05:14,160
+issue of science, including the front cover, which had the nuclear poor complex on it, which is
+
+698
+01:05:14,160 --> 01:05:18,800
+one of the biggest proteins in the body, the nuclear poor complexes, a protein that governs
+
+699
+01:05:18,800 --> 01:05:22,320
+all the nutrients going in and out of your cell nucleus. So they're, they're like,
+
+700
+01:05:22,320 --> 01:05:27,120
+they will halt gateways that open and close to let things go in and out of your cell nucleus.
+
+701
+01:05:27,120 --> 01:05:30,640
+So they're really important. Um, but they're huge because they're massive doughnut rings,
+
+702
+01:05:30,640 --> 01:05:34,880
+shaped things. And they've been looking to try and figure out that structure for decades.
+
+703
+01:05:34,880 --> 01:05:38,800
+And they have lots of, you know, experimental data, but it's too low resolution. There's bits
+
+704
+01:05:38,800 --> 01:05:44,480
+missing. And they were able to, like a giant Lego jigsaw puzzle, use alpha fold predictions
+
+705
+01:05:44,480 --> 01:05:49,680
+plus experimental data and combined those two independent sources of information, uh,
+
+706
+01:05:49,680 --> 01:05:53,360
+actually four different groups around the world were able to put it together. The set, uh,
+
+707
+01:05:53,360 --> 01:05:57,600
+more or less simultaneously using alpha fold predictions. So that's been amazing to see.
+
+708
+01:05:57,600 --> 01:06:01,760
+And pretty much every farmer company, every drug company executive I spoken to has said that
+
+709
+01:06:01,760 --> 01:06:07,120
+their teams are using alpha fold to accelerate whatever drugs, uh, uh, uh, they're, they're trying
+
+710
+01:06:07,120 --> 01:06:13,600
+to discover. So I think the knock on effect has been enormous in terms of, uh, uh, the impact
+
+711
+01:06:13,600 --> 01:06:18,160
+that alpha fold has made. And it's probably bringing in, it's creating biologists. It's bringing
+
+712
+01:06:18,160 --> 01:06:23,760
+more people into the field, um, but both on the excitement and both on the technical skills involved
+
+713
+01:06:24,480 --> 01:06:30,000
+in, um, it's almost like, uh, a gateway drug to biology. Yes, it is. And the end goal,
+
+714
+01:06:30,000 --> 01:06:35,040
+computational people involved too, hopefully. And, and I think for us, you know, the next stage,
+
+715
+01:06:35,040 --> 01:06:38,720
+as I said, you know, in future, we have to have other considerations too. We're building on top
+
+716
+01:06:38,720 --> 01:06:43,040
+of alpha fold and these other ideas I discussed with you about protein, protein interactions and,
+
+717
+01:06:43,040 --> 01:06:46,960
+and genomics and other things. And not everything will be open so some of it will,
+
+718
+01:06:46,960 --> 01:06:50,480
+we'll do commercially because that will be the best way to actually get the most resources and
+
+719
+01:06:50,480 --> 01:06:56,080
+impact behind it. In other ways, some other projects will do non-profit style. Um, and also,
+
+720
+01:06:56,080 --> 01:07:00,240
+we have to consider for future things as well, safety and ethics as well, like, but, you know,
+
+721
+01:07:00,240 --> 01:07:05,040
+synthetic biology, there are, you know, there is dual use. And we have to think about that as well
+
+722
+01:07:05,040 --> 01:07:09,440
+with alpha fold. We, you know, we consulted with 30 different bioethicists and, and other people
+
+723
+01:07:09,440 --> 01:07:14,160
+expert in this field to make sure it was safe before, um, we released it. So there'll be other
+
+724
+01:07:14,160 --> 01:07:18,400
+considerations in future. But for right now, you know, I think alpha fold is a kind of a gift from
+
+725
+01:07:18,400 --> 01:07:24,000
+us to, to, to the scientific community. So I'm pretty sure that something like alpha fold
+
+726
+01:07:25,520 --> 01:07:31,520
+would be part of Nobel prizes in the future. But us humans, of course, are horrible with
+
+727
+01:07:31,520 --> 01:07:37,520
+credit assignment. So we'll, of course, give it to the humans. Do you think there will be a day
+
+728
+01:07:37,520 --> 01:07:46,240
+when AI system can't be denied that it earned that Nobel prize? Do you think we'll see then
+
+729
+01:07:46,240 --> 01:07:51,200
+21st century? It depends what type of AI's we end up building, right? Whether they're, um,
+
+730
+01:07:52,160 --> 01:07:57,680
+you know, goal seeking agents who specifies the goals, uh, who comes up with the hypotheses,
+
+731
+01:07:57,680 --> 01:08:01,760
+who, you know, who determines which problems to tackle, right? So I think it's about it.
+
+732
+01:08:01,760 --> 01:08:07,680
+Announcement. Yes, it's an out of the results exactly as part of it. Um, so I think right now, of course,
+
+733
+01:08:07,680 --> 01:08:12,480
+it's, it's, it's, it's, it's amazing human ingenuity that's behind these systems. And then the
+
+734
+01:08:12,480 --> 01:08:18,000
+system, in my opinion, is just a tool, you know, be a bit like saying with Galileo and his telescope,
+
+735
+01:08:18,000 --> 01:08:22,640
+you know, the ingenuity that the credits should go to the telescope. I mean, it's clearly Galileo
+
+736
+01:08:22,640 --> 01:08:27,760
+building the tool, which he then uses. So I still see that in the same way today, even though
+
+737
+01:08:27,760 --> 01:08:33,200
+these tools learn for themselves, um, there, I think of, I think of things like Alpha Fold and
+
+738
+01:08:33,200 --> 01:08:38,480
+that the things we're building as the ultimate tools for science and for, for acquiring new knowledge
+
+739
+01:08:38,480 --> 01:08:43,440
+to help us as scientists acquire new knowledge. I think one day they will come a point where
+
+740
+01:08:44,320 --> 01:08:49,920
+an AI system may solve or come up with something like general relativity off its own bat,
+
+741
+01:08:49,920 --> 01:08:54,080
+not just by averaging everything on the internet or averaging everything on PubMed,
+
+742
+01:08:54,080 --> 01:08:59,360
+although that will be interesting to see what that would come up with. Um, so that to me is a bit
+
+743
+01:08:59,360 --> 01:09:04,880
+like our earlier debate about creativity, you know, inventing go rather than just coming up with a
+
+744
+01:09:04,880 --> 01:09:11,360
+good go move. And, um, so I think, uh, solving, I think to, to, you know, if we wanted to give it the
+
+745
+01:09:11,360 --> 01:09:16,640
+credit of like a Nobel type of thing, then it would need to invent go, uh, and sort of invent that
+
+746
+01:09:16,640 --> 01:09:22,640
+new conjecture out of the blue, um, rather than being specified by the, the, the human scientists or
+
+747
+01:09:22,640 --> 01:09:26,800
+the human creators. So I think right now that's, it's definitely just a tool. Although it is
+
+748
+01:09:26,800 --> 01:09:30,560
+interesting how far you get by averaging everything on the internet, like you said, because,
+
+749
+01:09:30,560 --> 01:09:35,600
+you know, a lot of people do see science as you're always standing on the shoulders of giants.
+
+750
+01:09:35,600 --> 01:09:41,920
+And the question is, how much are you really reaching up above the shoulders of giants?
+
+751
+01:09:41,920 --> 01:09:48,720
+Maybe it's just assimilating different kinds of results of the past with ultimately this new
+
+752
+01:09:48,720 --> 01:09:54,720
+perspective that gives you this breakthrough idea, but that idea may not be novel in the way
+
+753
+01:09:54,720 --> 01:09:59,920
+there can be already discovered in the internet. Maybe the Nobel prizes of the next 100 years
+
+754
+01:09:59,920 --> 01:10:04,960
+are already all there on the internet to be discovered. They, they could be. They could be. I mean,
+
+755
+01:10:04,960 --> 01:10:12,000
+I think, um, this is one of the big mysteries, I think is that, uh, uh, I, first of all, I believe
+
+756
+01:10:12,000 --> 01:10:15,680
+a lot of the big new breakthroughs that are going to come in the next few decades and even in the
+
+757
+01:10:15,680 --> 01:10:20,960
+last decade are going to come at the intersection between different subject areas where, um,
+
+758
+01:10:20,960 --> 01:10:25,920
+there'll be some new connection that's found between what seemingly were disparate areas.
+
+759
+01:10:25,920 --> 01:10:30,560
+And one can even think of deep mind, as I said earlier, as a sort of interdisciplinary between
+
+760
+01:10:30,560 --> 01:10:37,840
+neuroscience ideas and AI engineering ideas originally. And so, um, so I think there's that.
+
+761
+01:10:37,840 --> 01:10:41,600
+And then one of the things we can't imagine today is, and one of the reasons I think people,
+
+762
+01:10:41,600 --> 01:10:46,960
+we were so surprised by how well large models worked is that actually it's very hard for our
+
+763
+01:10:46,960 --> 01:10:51,520
+human minds, our limited human minds to understand what it would be like to read the whole internet.
+
+764
+01:10:51,520 --> 01:10:55,120
+Right. I think we can do a thought experiment. And I used to do this of like, well,
+
+765
+01:10:55,120 --> 01:10:59,760
+what if I read the whole Wikipedia, uh, what would I know? And I think our minds can just about
+
+766
+01:10:59,760 --> 01:11:04,320
+comprehend maybe what that would be like, but the whole internet is beyond comprehension.
+
+767
+01:11:04,320 --> 01:11:08,960
+So I think we just don't understand what it would be like to be able to hold all of that in
+
+768
+01:11:08,960 --> 01:11:14,400
+mind potentially, right? And then, uh, active at once. And then maybe what are the connections
+
+769
+01:11:14,400 --> 01:11:19,120
+that are available there? So I think no doubt there are huge things to be discovered just like that.
+
+770
+01:11:19,120 --> 01:11:24,560
+But I do think there is this other type of creativity of true spark of new knowledge,
+
+771
+01:11:24,560 --> 01:11:30,160
+new idea never thought before about can't be averaged from things that are known. Um, that really,
+
+772
+01:11:30,160 --> 01:11:34,560
+of course, everything come, you know, nobody creates in a vacuum. So there must be clues
+
+773
+01:11:34,560 --> 01:11:39,520
+somewhere, but just a unique way of putting those things together. I think some of the greatest
+
+774
+01:11:39,520 --> 01:11:44,320
+scientists in history have displayed that, I would say, although it's very hard to know going back
+
+775
+01:11:44,320 --> 01:11:49,040
+to their time, what was exactly known, uh, when they came up with those things. Although I, uh,
+
+776
+01:11:49,840 --> 01:11:55,760
+you're making me really think because just the thought experiment of deeply knowing 100 Wikipedia
+
+777
+01:11:55,760 --> 01:12:02,800
+pages, I don't think I can, um, I've been really impressed by Wikipedia for, for technical topics.
+
+778
+01:12:02,800 --> 01:12:10,240
+Yeah. So if you know 100 pages or 1000 pages, I don't think we can vision truly comprehend what's
+
+779
+01:12:11,200 --> 01:12:16,000
+what kind of intelligence that is. Yeah. It's a pretty powerful tell. If you know how to use that
+
+780
+01:12:16,000 --> 01:12:20,400
+and integrate that information correctly. Yes. I think you can go really far. Yeah. You can probably
+
+781
+01:12:20,400 --> 01:12:27,040
+construct thought experiments based on that, like, simulate different ideas. So if this is true,
+
+782
+01:12:27,040 --> 01:12:31,600
+let me run this thought experiment that maybe this is true. It's not really invention. It's like,
+
+783
+01:12:31,600 --> 01:12:37,760
+just taking literally the knowledge and using it to construct a very basic simulation of the world.
+
+784
+01:12:37,760 --> 01:12:42,560
+I mean, some argue it's romantic in part, but Einstein would do the same kind of things with
+
+785
+01:12:42,560 --> 01:12:47,200
+a thought experiment. Yeah. You one could imagine doing that systematically across millions of
+
+786
+01:12:47,200 --> 01:12:53,520
+Wikipedia pages, plus PubMed, all these things. I think there are many, many things to be discovered
+
+787
+01:12:53,520 --> 01:12:57,440
+like that that hugely useful. You know, you could imagine, and I want us to do some of these things
+
+788
+01:12:57,440 --> 01:13:01,600
+in material science, like room temperature superconductors is something on my list one day that I'd
+
+789
+01:13:01,600 --> 01:13:07,040
+like to like, you know, have an AI system to help build better optimize batteries. All of these
+
+790
+01:13:07,040 --> 01:13:14,240
+sort of mechanical things. I think a systematic sort of search could be guided by a model,
+
+791
+01:13:14,240 --> 01:13:19,760
+could be could be extremely powerful. So speaking of which, you have a paper on nuclear fusion.
+
+792
+01:13:21,120 --> 01:13:25,040
+Magnetic control of talking about plasma is the deeper enforcement learning. So you,
+
+793
+01:13:25,040 --> 01:13:31,200
+you're seeking to solve nuclear fusion with deep RL. So it's doing control of high temperature
+
+794
+01:13:31,200 --> 01:13:37,760
+plasma. Can you explain this work and can AI eventually solve nuclear fusion? It's been very
+
+795
+01:13:37,760 --> 01:13:43,200
+fun last year or two and very productive because we've been taking off a lot of my dream projects,
+
+796
+01:13:43,200 --> 01:13:48,000
+if you like, of things that I've collected over the years of areas of science that I would like to,
+
+797
+01:13:48,000 --> 01:13:53,440
+I think, could be very transformative if we helped accelerate and really interesting problems,
+
+798
+01:13:53,440 --> 01:13:59,040
+scientific challenges in of themselves. This is energy. So energy, yes, exactly. So energy and
+
+799
+01:13:59,040 --> 01:14:03,840
+climate. So we talked about disease and biology as being one of the biggest places I think AI
+
+800
+01:14:03,840 --> 01:14:08,480
+can help with. I think energy and climate is another one. So maybe they would be my top two.
+
+801
+01:14:09,520 --> 01:14:15,200
+And fusion is one one area I think AI can help with. Now fusion has many challenges,
+
+802
+01:14:15,200 --> 01:14:19,920
+mostly physics, material science, and engineering challenges as well to build these massive fusion
+
+803
+01:14:19,920 --> 01:14:25,120
+reactors and contain the plasma. And what we try to do, and whenever we go into a new field to
+
+804
+01:14:25,120 --> 01:14:30,240
+apply our systems is we look for, we talk to domain experts, we try and find the best people in
+
+805
+01:14:30,240 --> 01:14:36,160
+the world to collaborate with. In this case, in fusion, we collaborated with EPFL in Switzerland,
+
+806
+01:14:36,160 --> 01:14:40,480
+the Swiss Technical Institute, who are amazing. They have a test reactor. They were willing to
+
+807
+01:14:40,480 --> 01:14:44,560
+let us use, which, you know, I double checked with the team, we were going to use carefully and
+
+808
+01:14:44,560 --> 01:14:51,360
+safely. I was impressed. They managed to persuade them to let us use it. And so it's an amazing
+
+809
+01:14:51,360 --> 01:14:56,800
+test reactor they have there. And they try all sort of pretty crazy experiments on it.
+
+810
+01:14:56,800 --> 01:15:02,320
+And what we tend to look at is, if we go into a new domain like fusion, what are all the
+
+811
+01:15:02,320 --> 01:15:06,560
+bottleneck problems, like thinking from first principles, you know, what are all the bottleneck
+
+812
+01:15:06,560 --> 01:15:11,120
+problems that are still stopping fusion working today? And then we look at, we get a fusion expert
+
+813
+01:15:11,120 --> 01:15:16,000
+to tell us. And then we look at those bottlenecks and we look at the ones which ones are amenable
+
+814
+01:15:16,000 --> 01:15:22,720
+to our AI methods today. And we'll be interesting from a research perspective, from our point of
+
+815
+01:15:22,720 --> 01:15:27,360
+view, from an AI point of view. And that would address one of their bottlenecks. And in this case,
+
+816
+01:15:27,360 --> 01:15:32,400
+plasma control was perfect. So, you know, the plasma, it's a million degrees Celsius,
+
+817
+01:15:32,400 --> 01:15:37,440
+something like that's hotter than the sun. And there's obviously no material that can contain it.
+
+818
+01:15:37,440 --> 01:15:42,320
+So they have to be containing these magnetic, very powerful, superconducting magnetic fields.
+
+819
+01:15:42,320 --> 01:15:47,200
+But the problem is plasma is pretty unstable, as you imagine. You're kind of holding a mini sun,
+
+820
+01:15:47,200 --> 01:15:53,120
+mini star in a reactor. So, you know, you kind of want to predict ahead of time what the plasma
+
+821
+01:15:53,120 --> 01:15:59,040
+is going to do. So you can move the magnetic field within a few milliseconds, you know, to basically
+
+822
+01:15:59,040 --> 01:16:03,360
+contain what it's going to do next. So it seems like a perfect problem if you think of it for
+
+823
+01:16:03,360 --> 01:16:08,240
+like a reinforcement learning prediction problem. So, you know, you got controller, you're going
+
+824
+01:16:08,240 --> 01:16:13,120
+to move the magnetic field. And until we came along, you know, they were doing with traditional
+
+825
+01:16:13,120 --> 01:16:18,720
+operational research type of controllers, which are kind of handcrafted. And the problem is,
+
+826
+01:16:18,720 --> 01:16:22,080
+of course, they can't react in the moment to something the plasma is doing. They have to be
+
+827
+01:16:22,080 --> 01:16:26,880
+hard coded. And again, knowing that that's normally our go-to solution is we would like to learn
+
+828
+01:16:26,880 --> 01:16:31,360
+that instead. And they also had a simulator of these plasma. So there were lots of criteria
+
+829
+01:16:31,360 --> 01:16:38,320
+that matched what we like to use. So can AI eventually solve nuclear fusion?
+
+830
+01:16:38,320 --> 01:16:43,600
+Well, so we, with this problem, and we published it in a NaturePay Plus year, we held the fusion,
+
+831
+01:16:43,600 --> 01:16:48,240
+that we held the plasma in a specific shape. So actually, it's almost like carving the plasma
+
+832
+01:16:48,240 --> 01:16:54,240
+into different shapes and control and hold it there for a record amount of time. So that's one
+
+833
+01:16:54,240 --> 01:17:01,600
+of the problems of fusion sort of solved. So have a controller that's able to, no matter the shape,
+
+834
+01:17:01,600 --> 01:17:05,360
+contain it. Yeah, contain it and hold it in structure. And there's different shapes that are
+
+835
+01:17:05,360 --> 01:17:12,560
+better for the energy productions called droplets and so on. So that was huge. And now we're looking,
+
+836
+01:17:12,560 --> 01:17:17,920
+we're talking to lots of fusion startups to see what's the next pump we can tackle in the fusion
+
+837
+01:17:17,920 --> 01:17:24,000
+area. So another fascinating place in a paper title, pushing the frontiers of
+
+838
+01:17:24,000 --> 01:17:29,920
+density functionals by solving the fractional electron problem. So you're taking on modeling
+
+839
+01:17:29,920 --> 01:17:33,440
+and simulating the quantum mechanical behavior of electrons. Yes.
+
+840
+01:17:35,920 --> 01:17:41,440
+Can you explain this work and can AI model and simulate arbitrary quantum mechanical systems
+
+841
+01:17:41,440 --> 01:17:47,040
+in the future? Yeah, so this is another problem I've had my eye on for, you know, decade or more,
+
+842
+01:17:47,040 --> 01:17:53,280
+which is sort of simulating the properties of electrons. If you can do that, you can basically
+
+843
+01:17:53,280 --> 01:18:00,160
+describe how elements and materials and substances work. So it's kind of like fundamental if you
+
+844
+01:18:00,160 --> 01:18:06,400
+want to advance material science. And we have Schrodinger's equation and then we have approximations
+
+845
+01:18:06,400 --> 01:18:13,120
+to that density functional theory. These things are famous. And people try and write approximations
+
+846
+01:18:13,120 --> 01:18:19,760
+to these to these functionals and kind of come up with descriptions of the electron clouds,
+
+847
+01:18:19,760 --> 01:18:23,760
+where they're going to go, how they're going to interact when you put two elements together.
+
+848
+01:18:24,320 --> 01:18:30,480
+And what we try to do is learn a simulation, learn a functional that will describe more chemistry,
+
+849
+01:18:30,480 --> 01:18:36,240
+types of chemistry. So until now, you know, you can run expensive simulations, but then you can only
+
+850
+01:18:36,240 --> 01:18:42,160
+simulate very small molecules, very simple molecules. We would like to simulate large materials.
+
+851
+01:18:43,040 --> 01:18:47,840
+And so today there's no way of doing that. And we're building up towards building
+
+852
+01:18:47,840 --> 01:18:54,160
+functional that approximate Schrodinger's equation and then allow you to describe what the
+
+853
+01:18:54,160 --> 01:18:59,120
+electrons are doing. And all material sort of science and material properties are governed by
+
+854
+01:18:59,120 --> 01:19:05,680
+the electrons and how they interact. So have a good summarization of the simulation
+
+855
+01:19:05,680 --> 01:19:12,720
+through the functional. But one that is still close to what the actual simulation will come
+
+856
+01:19:12,720 --> 01:19:19,200
+up with. So what, how difficult is that task? What's involved in that task? Is it running those
+
+857
+01:19:19,200 --> 01:19:24,640
+complicated simulations and learning the task of mapping from the initial conditions and the
+
+858
+01:19:24,640 --> 01:19:29,360
+parameters of the simulation, learning what the functional would be? Yeah. So it's pretty tricky.
+
+859
+01:19:29,360 --> 01:19:34,880
+And we've done it with, you know, the nice thing is we, there are, we can run a lot of the simulations
+
+860
+01:19:34,880 --> 01:19:40,400
+that the molecular dynamic simulations on our compute clusters. And so that generates a lot of
+
+861
+01:19:40,400 --> 01:19:45,280
+data. So in this case, the data is generated. So we like those sort of systems and that's why we
+
+862
+01:19:45,280 --> 01:19:50,240
+use games. It's simulator, generator data. And we can kind of create as much of it as we want,
+
+863
+01:19:50,240 --> 01:19:55,920
+really. And just let's leave some, you know, if any, computers are free in the cloud, we just run,
+
+864
+01:19:55,920 --> 01:19:59,200
+we run some of these calculations, right? Compute cluster calculations.
+
+865
+01:19:59,200 --> 01:20:03,440
+I like the free compute terms used up on quantum mechanics. Yeah, quantum mechanics, exactly,
+
+866
+01:20:03,440 --> 01:20:08,720
+simulations and protein simulations and other things. And so, and so, you know, when you're not
+
+867
+01:20:08,720 --> 01:20:13,040
+searching on YouTube for video, cat videos, we're using those computers usefully and quantum
+
+868
+01:20:13,040 --> 01:20:18,560
+chemistry, the idea. Fine. And, and, and pretty good use. And then, yeah, and then all of that
+
+869
+01:20:18,560 --> 01:20:23,280
+computational data that's generated, we can then try and learn the functionals from that,
+
+870
+01:20:23,280 --> 01:20:28,560
+which of course are way more efficient. Once we learn the functional, then, um, running those
+
+871
+01:20:28,560 --> 01:20:34,720
+simulations would be. Do you think one day AI may allow us to do something like, basically,
+
+872
+01:20:34,720 --> 01:20:40,400
+crack open physics, so do something like travel fast in the speed of light? My ultimate aim is
+
+873
+01:20:40,400 --> 01:20:47,280
+always being with AI is, um, the reason I am personally working on AI for my whole life is to
+
+874
+01:20:47,280 --> 01:20:53,680
+build a tool to help us understand the universe. So, I wanted to, and that means physics, really,
+
+875
+01:20:53,680 --> 01:20:59,040
+and the nature of reality. So, um, uh, I don't think we have systems that are capable of doing that
+
+876
+01:20:59,040 --> 01:21:03,840
+yet, but when we get towards AGI, I think, um, that's one of the first things I think we should apply
+
+877
+01:21:03,840 --> 01:21:08,880
+AGI to. I would like to test the limits of physics and our knowledge of physics. There's so many
+
+878
+01:21:08,880 --> 01:21:12,960
+things we don't know. This is one thing I find fascinating about science and, you know,
+
+879
+01:21:12,960 --> 01:21:17,120
+as a huge proponent of the scientific method as being one of the greatest ideas humanity's ever
+
+880
+01:21:17,120 --> 01:21:22,480
+had and allowed us to progress with our knowledge. But I think as a true scientist, I think what you
+
+881
+01:21:22,480 --> 01:21:28,640
+find is the more you find out, uh, the more you realize we don't know. And, and I always think
+
+882
+01:21:28,640 --> 01:21:33,280
+that it's surprising that more people don't aren't troubled, you know, every night I think about
+
+883
+01:21:33,280 --> 01:21:37,200
+all these things we interact with all the time that we have no idea how they work. Time,
+
+884
+01:21:37,840 --> 01:21:43,760
+consciousness, gravity, life, we can't, I mean, these are all the fundamental things of nature.
+
+885
+01:21:43,760 --> 01:21:50,880
+I think the way we don't really know what they are. To live life, we, uh, pin certain assumptions
+
+886
+01:21:50,880 --> 01:21:56,400
+on them and kind of treat our assumptions as if they're a fact. Yeah. That allows us to sort of
+
+887
+01:21:56,400 --> 01:22:01,520
+box them off somehow. Yeah, box them off somehow. But your, the reality is when you think of time,
+
+888
+01:22:01,520 --> 01:22:07,440
+you should remind yourself, you should put it off the, uh, take it off the shelf and realize like,
+
+889
+01:22:07,440 --> 01:22:11,600
+no, we have a bunch of assumptions. There's still a lot of, there's even not a lot of debate. There's
+
+890
+01:22:11,600 --> 01:22:17,920
+a lot of uncertainty about exactly what is time. Uh, is there an error of time? You know, there's,
+
+891
+01:22:17,920 --> 01:22:21,600
+there's a lot of other questions that you can't just make assumptions about. And maybe,
+
+892
+01:22:22,640 --> 01:22:30,080
+AI allows you to, um, not put anything on the shelf. Yeah. Well, I make any, uh, hard assumptions
+
+893
+01:22:30,080 --> 01:22:35,680
+and really open it up and see what exactly I think we should be truly open minded about that. And, uh,
+
+894
+01:22:35,680 --> 01:22:42,720
+exactly that not be dogmatic to a particular theory. Um, it'll also allow us to build better tools,
+
+895
+01:22:42,720 --> 01:22:48,880
+experimental tools eventually that can then test certain theories that may not be testable today
+
+896
+01:22:48,880 --> 01:22:53,120
+about as things about like what we spoke about at the beginning about the computational
+
+897
+01:22:53,120 --> 01:22:58,000
+and nature of the universe. How one might, if that was true, how one might go about testing that,
+
+898
+01:22:58,000 --> 01:23:02,400
+right? And, and how much, uh, you know, there are people who've conjectured people like, uh,
+
+899
+01:23:02,400 --> 01:23:07,040
+Scott Aronson and others about, uh, you know, how much information can a specific
+
+900
+01:23:07,040 --> 01:23:12,960
+plank unit of space and time contain, right? So one might be able to think about testing those ideas.
+
+901
+01:23:12,960 --> 01:23:20,640
+If you had, um, AI helping you build some new exquisite, uh, uh, experimental tools. This is
+
+902
+01:23:20,640 --> 01:23:26,080
+what I imagine, you know, many decades from now will be able to do. And what kind of questions
+
+903
+01:23:26,080 --> 01:23:31,680
+could be answered to running a simulation of them? So that there's a bunch of physics simulations
+
+904
+01:23:31,680 --> 01:23:37,840
+you can imagine that could be run in an, uh, so some kind of efficient way, much like you're doing
+
+905
+01:23:37,840 --> 01:23:45,280
+in the quantum simulation work. And perhaps even the origin of life. So figuring out how going
+
+906
+01:23:45,280 --> 01:23:52,720
+even back before the work of alpha fold begins of how this whole whole thing, um, emerges from a
+
+907
+01:23:52,720 --> 01:23:58,080
+rock. Yes. From a static thing. Would you, would you, do you think AI will allow us to, is that
+
+908
+01:23:58,080 --> 01:24:02,720
+something you have your eye on? It's trying to understand the origin of life. First of all,
+
+909
+01:24:02,720 --> 01:24:09,280
+yourself, would, would you think, um, how the heck did life origin and earth? Yeah. Well,
+
+910
+01:24:09,280 --> 01:24:15,680
+maybe we'll come to that in a second, but I think the ultimate use of AI is to kind of use it
+
+911
+01:24:15,680 --> 01:24:22,480
+to accelerate science to the maximum. So I, um, think of it a little bit like the tree of all knowledge.
+
+912
+01:24:22,480 --> 01:24:26,880
+If you imagine that's all the knowledge there is in the universe to attain. And, uh, we sort of
+
+913
+01:24:26,880 --> 01:24:31,440
+barely scratched the surface of that so far. And even though, you know, we've, we've, we've done
+
+914
+01:24:31,440 --> 01:24:36,480
+pretty well since the enlightenment, right, as humanity. And I think AI will turbocharge all of
+
+915
+01:24:36,480 --> 01:24:41,440
+that like we've seen without a fold. And I want to explore as much of that tree of knowledge as
+
+916
+01:24:41,440 --> 01:24:47,760
+it's possible to do. And, um, and I think that involves AI helping us with, with, with understanding
+
+917
+01:24:47,760 --> 01:24:53,440
+or finding patterns, um, but also potentially designing and building new tools, experimental tools.
+
+918
+01:24:53,440 --> 01:24:59,360
+So I think that's all, uh, and also running simulations and learning simulations. All of that,
+
+919
+01:24:59,360 --> 01:25:04,800
+we're already, we're sort of doing it at a, at a, at a, at a, you know, baby steps level here.
+
+920
+01:25:04,800 --> 01:25:11,200
+But I can imagine that in, in, in the decades to come as, uh, you know, what's the full flourishing
+
+921
+01:25:11,200 --> 01:25:14,960
+of, of that line of thinking? It's going to be truly incredible, I would say.
+
+922
+01:25:14,960 --> 01:25:19,440
+If I visualize this tree of knowledge, something tells me that that knowledge for,
+
+923
+01:25:19,440 --> 01:25:24,960
+tree of knowledge for humans is much smaller. In the set of all possible trees of knowledge,
+
+924
+01:25:24,960 --> 01:25:33,520
+it's actually quite small, giving our cognitive limitations, um, limited cognitive capabilities
+
+925
+01:25:33,520 --> 01:25:38,000
+that even with the, with the tools we build, we still won't be able to understand a lot of things.
+
+926
+01:25:38,000 --> 01:25:45,120
+And that's perhaps what non-human systems may be able to reach farther, not just as tools, but
+
+927
+01:25:45,120 --> 01:25:50,080
+in themselves understanding something that they can bring back. Yeah, it could well be.
+
+928
+01:25:50,080 --> 01:25:54,160
+So I mean, there's so many things that, that, that, that, that are sort of encapsulated in what
+
+929
+01:25:54,160 --> 01:25:58,480
+you just said there. I think, first of all, um, there's, there's two different things that's like,
+
+930
+01:25:58,480 --> 01:26:03,200
+what do we understand today? Yeah. What could the human mind understand? And what is the
+
+931
+01:26:03,200 --> 01:26:08,880
+totality of what is there to be understood, right? And so there's three, you know, you can think
+
+932
+01:26:08,880 --> 01:26:14,000
+of them as three larger, larger trees or exploring more branches of that tree. And I, I think with AI,
+
+933
+01:26:14,000 --> 01:26:19,040
+we're going to explore that whole lot. Now, the question is, is, you know, if you think about
+
+934
+01:26:19,040 --> 01:26:24,720
+what is the totality of what could be understood, um, there may be some fundamental physics reasons
+
+935
+01:26:24,720 --> 01:26:28,960
+why certain things can't be understood, like what's outside a simulation or outside the universe.
+
+936
+01:26:28,960 --> 01:26:33,600
+Maybe it's not understandable from within the universe. Um, so that's there may be some hard
+
+937
+01:26:33,600 --> 01:26:39,120
+constraints like that, you know, could be smaller constraints like, um, we think of space time
+
+938
+01:26:39,120 --> 01:26:44,560
+as fundamental. Our human brains are really used to this idea of a three dimensional world with time.
+
+939
+01:26:44,560 --> 01:26:49,280
+Right. Maybe, but our tools could go beyond that. Yeah. They wouldn't have that limitation
+
+940
+01:26:49,280 --> 01:26:53,760
+necessarily. They could think in 11 dimensions, 12 dimensions, whatever is needed. But, um,
+
+941
+01:26:53,760 --> 01:26:58,000
+we could still maybe understand that in several different ways. The example I always give is,
+
+942
+01:26:58,000 --> 01:27:03,040
+um, when I, you know, play Gary Kasparov for speed chess or we've talked about chess and these kind
+
+943
+01:27:03,040 --> 01:27:08,720
+of things, um, you know, he, if you, if you, if you're reasonably good at chess, you can, um,
+
+944
+01:27:08,720 --> 01:27:13,200
+you can't come up with the move Gary comes up with in his move, but he can explain it to you.
+
+945
+01:27:13,200 --> 01:27:17,840
+And you can understand and you can understand post-hoc the reasoning. Yeah. So, so I think there's a,
+
+946
+01:27:17,840 --> 01:27:21,520
+there's an even further level of like, well, maybe you couldn't have invented that thing,
+
+947
+01:27:21,520 --> 01:27:26,480
+but, but using, like, going back to using language again, perhaps you can understand and appreciate
+
+948
+01:27:26,480 --> 01:27:31,040
+that. Same way, like, you can appreciate, you know, Vivaldi or Mozart or something without,
+
+949
+01:27:31,040 --> 01:27:35,520
+you can appreciate the beauty of that without, um, being able to, to construct it yourself,
+
+950
+01:27:35,520 --> 01:27:40,080
+right? And then the music yourself. So I think we see this in all forms of life. So it'll be that
+
+951
+01:27:40,080 --> 01:27:46,080
+times, you know, a million, but it would, you can imagine also one sign of intelligence is the
+
+952
+01:27:46,080 --> 01:27:50,640
+ability to explain things clearly and simply, right? You know, people I rich refine another one
+
+953
+01:27:50,640 --> 01:27:54,400
+of my all-time heroes used to say that, right? If you can't, you know, if you can explain it
+
+954
+01:27:54,400 --> 01:27:58,960
+something simply, then that's a, that's the best sign, a complex topic simply. Then that's one
+
+955
+01:27:58,960 --> 01:28:02,960
+of the best signs of you understanding it. Yeah. So, um, I can see myself talking trash from
+
+956
+01:28:02,960 --> 01:28:09,680
+the AI system in that way. Yes. It gets frustrated how dumb I am in trying to explain something to me.
+
+957
+01:28:09,680 --> 01:28:12,640
+I was like, well, that means you're not intelligent because if you were intelligent,
+
+958
+01:28:12,640 --> 01:28:16,320
+you'd be able to explain it simply. Yeah. Of course, you know, there's, there's also the other
+
+959
+01:28:16,320 --> 01:28:21,040
+option. Of course, we couldn't enhance ourselves and, and without devices, we, we are already sort of
+
+960
+01:28:21,040 --> 01:28:25,200
+symbiotic without compute devices, right? Without phones and other things and, you know,
+
+961
+01:28:25,200 --> 01:28:29,120
+this stuff like neural link and accepture that could be, could, could advance that further.
+
+962
+01:28:29,920 --> 01:28:35,200
+So, I think there's lots of, lots of really amazing possibilities that I could foresee from here.
+
+963
+01:28:35,200 --> 01:28:40,480
+Well, let me ask you some wild questions. So, out there looking for friends, do you think there's
+
+964
+01:28:40,480 --> 01:28:45,680
+a lot of alien civilizations out there? So, I guess there's also goes back to your origin of
+
+965
+01:28:45,680 --> 01:28:51,680
+live question, too, because I think that that's key. My personal opinion, looking at all this and,
+
+966
+01:28:51,680 --> 01:28:56,320
+you know, it's one of my hobbies, physics, I guess. So, so I, you know, it's something I think
+
+967
+01:28:56,320 --> 01:29:01,200
+about a lot and talk to a lot of experts on and, and, and read a lot of books on. And I think
+
+968
+01:29:02,080 --> 01:29:07,120
+my feeling currently is that, that we are alone. I think that's the most likely scenario,
+
+969
+01:29:07,120 --> 01:29:11,680
+given what, what evidence we have. So, um, and the reasoning is, I think that,
+
+970
+01:29:11,680 --> 01:29:18,080
+you know, we've tried since things like sety program. And I guess since the dawning of the,
+
+971
+01:29:18,080 --> 01:29:24,320
+the space age, we've, you know, had telescopes, open radio telescopes and other things. And if you think
+
+972
+01:29:24,320 --> 01:29:30,160
+about, um, and tried to detect signals. Now, if you think about the evolution of humans on earth,
+
+973
+01:29:30,160 --> 01:29:36,240
+we could have easily been, um, a million years ahead of our time now or a million years behind.
+
+974
+01:29:36,240 --> 01:29:42,080
+Right. Easily with just some slightly different quirk thing happening hundreds of thousands years ago.
+
+975
+01:29:42,080 --> 01:29:45,840
+You know, things could have been slightly different. If the B2 would hit the dinosaurs a million years
+
+976
+01:29:45,840 --> 01:29:50,800
+earlier, maybe things would have evolved. Uh, we'd be a million years ahead of where we are now.
+
+977
+01:29:50,800 --> 01:29:55,920
+So what that means is, if you imagine where humanity will be in a few hundred years, let alone a
+
+978
+01:29:55,920 --> 01:30:01,280
+million years, especially if we hopefully, um, keep, you know, solve things like climate change and
+
+979
+01:30:01,280 --> 01:30:07,040
+other things. And we continue to flourish. Um, and we build things like AI and we do space traveling
+
+980
+01:30:07,040 --> 01:30:11,760
+and all of the stuff that, that, that humans have dreamed of forever, right? And sci-fi has talked
+
+981
+01:30:11,760 --> 01:30:18,880
+about forever. Um, we will be spreading across the stars, right? And Voin Neumann famously calculated,
+
+982
+01:30:18,880 --> 01:30:23,120
+you know, it would only take about a million years if you sent out Voin Neumann probes to the nearest,
+
+983
+01:30:23,120 --> 01:30:28,320
+you know, the nearest, uh, other solar systems. And, and then they built, all they did was build
+
+984
+01:30:28,320 --> 01:30:32,400
+two more versions themselves and set those two out to the next nearest systems. Uh, you,
+
+985
+01:30:32,400 --> 01:30:35,920
+you know, within a million years, I think you would have one of these probes in every system in the
+
+986
+01:30:35,920 --> 01:30:41,520
+galaxy. So it's not actually a cosmological time. That's actually a very short amount of time.
+
+987
+01:30:42,080 --> 01:30:46,320
+So, and, and, you know, we people like Dyson have thought about constructing Dyson spheres
+
+988
+01:30:46,320 --> 01:30:50,880
+around stars to collect all the energy coming out of the star. You know, that, there would be
+
+989
+01:30:50,880 --> 01:30:55,920
+constructions like that would be visible across space, um, probably even across a galaxy.
+
+990
+01:30:55,920 --> 01:31:00,160
+So, uh, and then, you know, if you think about all of our radio, television, uh,
+
+991
+01:31:00,160 --> 01:31:06,240
+emissions that have gone out since, since the, you know, 30s and 40s, um, imagine a million years of
+
+992
+01:31:06,240 --> 01:31:12,640
+that. And now hundreds of civilizations doing that. When we opened our ears at the point we got
+
+993
+01:31:12,640 --> 01:31:18,960
+technologically sophisticated enough in the space age, we should have heard a cacophony of voices,
+
+994
+01:31:18,960 --> 01:31:23,040
+we should have joined that cacophony of voices. And what, what we did, we opened our ears and we
+
+995
+01:31:23,040 --> 01:31:28,240
+heard nothing. And many people who argue that there are aliens would say, well, we haven't really
+
+996
+01:31:28,240 --> 01:31:32,880
+done exhaustive search yet. And maybe we're looking in the wrong bands and, and we've got the
+
+997
+01:31:32,880 --> 01:31:37,280
+wrong devices. And we wouldn't notice what an alien form was like to be so different to what we're
+
+998
+01:31:37,280 --> 01:31:42,240
+used to. But, you know, I don't, I don't really buy that. That it shouldn't be as difficult as
+
+999
+01:31:42,240 --> 01:31:47,200
+that. Like we, I think we've searched enough that if it were everywhere, it should be everywhere.
+
+1000
+01:31:47,200 --> 01:31:51,040
+We should see Dyson spheres being put up. Suns blinking in and out. You know, there should be
+
+1001
+01:31:51,040 --> 01:31:54,800
+a lot of evidence for those things. And then there are other people argue, well, the sort of
+
+1002
+01:31:54,800 --> 01:31:58,640
+safari view of like, well, we're a primitive species still because we're not space-faring
+
+1003
+01:31:58,640 --> 01:32:03,280
+yet. And, and we're, you know, there's some kind of globe, like universal rule, not to interfere,
+
+1004
+01:32:03,280 --> 01:32:08,560
+your Star Trek rule. But like, look, look, we can't even coordinate humans to deal with climate change.
+
+1005
+01:32:08,560 --> 01:32:13,120
+And we're one species. What, what is the chance that of all of these different human civilizations,
+
+1006
+01:32:13,120 --> 01:32:18,240
+you know, alien civilizations, they would have the same priorities and, and, and, and agree or
+
+1007
+01:32:18,240 --> 01:32:22,800
+across the, you know, these kind of matters. And even if that was true, and we were in some sort
+
+1008
+01:32:22,800 --> 01:32:27,520
+of safari for our own good, to me, that's not much different from the simulation hypothesis.
+
+1009
+01:32:27,520 --> 01:32:31,200
+Because what does it mean, the simulation hypothesis? I think in its most fundamental level,
+
+1010
+01:32:31,200 --> 01:32:36,640
+it means what we're seeing is not quite reality, right? It's something, there's something more
+
+1011
+01:32:36,640 --> 01:32:41,680
+deeper underlying it, maybe computational. Now, if we were in a, if we were in a sort of safari
+
+1012
+01:32:41,680 --> 01:32:46,400
+park and everything we were seeing was a hologram and it was projected by the aliens or whatever,
+
+1013
+01:32:46,400 --> 01:32:50,640
+that to me is not much different than thinking we're inside of another universe. Because we still
+
+1014
+01:32:50,640 --> 01:32:55,840
+can't see true reality, right? I mean, there's, there's other explanations. It could be that
+
+1015
+01:32:56,720 --> 01:33:01,040
+the way their communicating is just fundamentally different. That we're too dumb to understand
+
+1016
+01:33:01,040 --> 01:33:06,720
+the much better methods of communication they have. It could be, I mean, it's a silly to say, but
+
+1017
+01:33:07,440 --> 01:33:12,640
+our own thoughts could be the methods by which they're communicating. Like, the place for which
+
+1018
+01:33:12,640 --> 01:33:20,800
+are ideas, writers talk about this, like the muse. Yeah. The, it sounds like very kind of wild,
+
+1019
+01:33:20,800 --> 01:33:25,920
+but it could be thoughts. It could be some interactions with our mind that we think are
+
+1020
+01:33:25,920 --> 01:33:32,960
+originating from us is actually something that is coming from other life forms elsewhere.
+
+1021
+01:33:32,960 --> 01:33:37,920
+Consciousness itself might be that. It could be, but I don't see any sensible argument to the why,
+
+1022
+01:33:37,920 --> 01:33:43,040
+why would all of the alien species be in this way? Yeah, some of them will be more primitive.
+
+1023
+01:33:43,040 --> 01:33:46,640
+They would be close to our level. You know, there would, there should be a whole sort of
+
+1024
+01:33:46,640 --> 01:33:50,320
+normal distribution of these things, right? Some would be aggressive, some would be, but,
+
+1025
+01:33:50,320 --> 01:33:56,240
+you know, curious others would be very stoical and philosophical. Because, you know, maybe there
+
+1026
+01:33:56,240 --> 01:34:01,040
+are a million years older than us, but it's not, it shouldn't be like, what, I mean, one,
+
+1027
+01:34:01,040 --> 01:34:05,360
+one alien civilization might be like that, communicating thoughts and others, but I don't see why,
+
+1028
+01:34:05,360 --> 01:34:09,760
+you know, potentially the hundreds there should be would be uniform in this way, right?
+
+1029
+01:34:09,760 --> 01:34:14,400
+It could be a violent dictatorship that the people, the alien civilizations that
+
+1030
+01:34:15,600 --> 01:34:24,640
+become successful become, gain the ability to be destructive, an order magnitude more destructive.
+
+1031
+01:34:25,920 --> 01:34:34,800
+But of course, the sad thought, well, either humans are very special. We took a lot of leaps
+
+1032
+01:34:34,800 --> 01:34:41,040
+that arrived at what it means to be human. There's a question there, which was the hardest,
+
+1033
+01:34:41,040 --> 01:34:46,240
+which was the most special, but also if others have reached this level, and maybe many others have
+
+1034
+01:34:46,240 --> 01:34:53,520
+reached this level, the great filter that's prevented them from going farther to becoming a
+
+1035
+01:34:53,520 --> 01:34:59,600
+multi-planetary species or reaching out into the stars. And those are really important questions
+
+1036
+01:34:59,600 --> 01:35:05,440
+for us, whether, whether there's other alien civilizations that there are not. This is very
+
+1037
+01:35:05,440 --> 01:35:12,080
+useful for us to think about. If we destroy ourselves, how will we do it? And how easy is it to do?
+
+1038
+01:35:12,080 --> 01:35:16,640
+Yeah. Well, these are big questions, and I've thought about these a lot, but the interesting
+
+1039
+01:35:16,640 --> 01:35:22,160
+thing is that if we're alone, that's somewhat comforting from the great filter perspective,
+
+1040
+01:35:22,160 --> 01:35:26,640
+because it probably means the great filters will be passed us. And I'm pretty sure they are. So
+
+1041
+01:35:26,640 --> 01:35:31,360
+going back to your origin of life question, there are some incredible things that no one knows
+
+1042
+01:35:31,360 --> 01:35:37,280
+how happened. Obviously, the first life form from chemical soup, that seems pretty hard, but I
+
+1043
+01:35:37,280 --> 01:35:42,320
+would guess the multicellular, I wouldn't be that surprised if we saw single cells,
+
+1044
+01:35:42,320 --> 01:35:48,160
+sort of life forms elsewhere, bacteria type things. But multicellular life seems incredibly hard,
+
+1045
+01:35:48,160 --> 01:35:53,760
+that step of capturing mitochondria, and then using that as part of yourself when you've just
+
+1046
+01:35:53,760 --> 01:36:01,280
+eaten it. Would you say that's the biggest, the most, like, if you had to choose one, sort of
+
+1047
+01:36:01,280 --> 01:36:07,360
+hitchhiker's got a galaxy, one set in summary of like, oh, those clever creatures did this,
+
+1048
+01:36:07,360 --> 01:36:10,880
+there would be the multicellular. I think that's probably the one that's the biggest. I mean,
+
+1049
+01:36:10,880 --> 01:36:14,880
+there's a great book called The Ten Grand Infigrate Inventions of Evolution by Nick Lane,
+
+1050
+01:36:14,880 --> 01:36:20,880
+and he speculates on ten of these, you know, what could be great filters. I think that's one.
+
+1051
+01:36:20,880 --> 01:36:26,800
+I think the advent of intelligence, and conscious intelligence, and in order to just be able to
+
+1052
+01:36:26,800 --> 01:36:31,840
+do science, and things like that, is huge as well. I mean, there's only evolved once as far as,
+
+1053
+01:36:31,840 --> 01:36:38,160
+you know, in earth history. So that would be a later candidate, but there's certainly for
+
+1054
+01:36:38,160 --> 01:36:42,400
+the early candidates, I think, multicellular life forms is huge. By the way, what it's interesting
+
+1055
+01:36:42,400 --> 01:36:51,280
+to ask you, if you can hypothesize about what is the origin of intelligence, is it that we started
+
+1056
+01:36:51,280 --> 01:36:57,120
+cooking meat over fire? Is it that we somehow figured out that we could be very powerful when we
+
+1057
+01:36:57,120 --> 01:37:05,520
+started collaborating? So cooperation between our ancestors so that we can overthrow the alpha male.
+
+1058
+01:37:06,880 --> 01:37:11,040
+What is it? Richard, I talked to Richard Ranham, who thinks we're all just beta males, who figured
+
+1059
+01:37:11,040 --> 01:37:17,360
+out how to collaborate to defeat the one, the dictator, the authoritarian alpha male, that
+
+1060
+01:37:17,360 --> 01:37:24,640
+controlled the tribe. Is there other explanation? Was there 2001's besides the type of monolith
+
+1061
+01:37:24,640 --> 01:37:29,200
+that came down to earth? Well, I think all of those things you suggest are good candidates
+
+1062
+01:37:29,200 --> 01:37:36,960
+fire and cooking, right? So that's clearly important for energy efficiency, cooking our meat,
+
+1063
+01:37:36,960 --> 01:37:42,240
+and then being able to be more efficient about eating it and consuming the energy.
+
+1064
+01:37:43,280 --> 01:37:48,000
+I think that's huge in then utilising fire and tools. I think you're right about the tribal
+
+1065
+01:37:48,000 --> 01:37:52,640
+cooperation aspects and probably language as part of that, because probably that's what allowed
+
+1066
+01:37:52,640 --> 01:37:59,200
+us to outcompete Neanderthals and perhaps less cooperative species. So that may be the case,
+
+1067
+01:37:59,200 --> 01:38:04,880
+toolmaking, spears, axes, I think that let us, I mean, I think it's pretty clear now that humans
+
+1068
+01:38:04,880 --> 01:38:09,840
+were responsible for a lot of the extinctions of megafauna, especially in the Americas,
+
+1069
+01:38:09,840 --> 01:38:15,760
+when humans arrived. So you can imagine once you discover tool usage, how powerful that would
+
+1070
+01:38:15,760 --> 01:38:20,960
+have been and how scary for animals. So I think all of those could have been explanations for it.
+
+1071
+01:38:20,960 --> 01:38:25,680
+You know, the interesting thing is that it's a bit like general intelligence too, it's very costly
+
+1072
+01:38:25,680 --> 01:38:30,560
+to begin with to have a brain, and especially a general purpose brain rather than a special
+
+1073
+01:38:30,560 --> 01:38:34,800
+purpose one, because you might have energy at brains use, I think it's like 20% of the body's energy,
+
+1074
+01:38:34,800 --> 01:38:39,440
+and it's massive. And you're thinking chess, one of the funny things that we used to say is
+
+1075
+01:38:39,440 --> 01:38:44,880
+it's as much as a racing driver uses for a whole formula one race. You're just playing a game of,
+
+1076
+01:38:44,880 --> 01:38:48,320
+you know, serious high level chess, which we know you wouldn't think, just sitting there,
+
+1077
+01:38:49,120 --> 01:38:54,640
+because the brain's using so much energy. So in order for an animal and organism to justify that,
+
+1078
+01:38:54,640 --> 01:39:01,840
+there has to be a huge payoff. And the problem with half a brain or half, you know,
+
+1079
+01:39:01,840 --> 01:39:09,360
+intelligence say an IQs of, you know, of like a monkey brain, it's not clear you can justify
+
+1080
+01:39:09,360 --> 01:39:14,720
+that evolutionary until you get to the human level brain. And so how do you do that jump? It's
+
+1081
+01:39:14,720 --> 01:39:18,160
+very difficult, which is why I think it's only been done once, from the sort of specialized
+
+1082
+01:39:18,160 --> 01:39:23,760
+brains that you see in animals, to this sort of general purpose, cheering powerful brains,
+
+1083
+01:39:23,760 --> 01:39:31,920
+that humans have. And which allows us to invent the modern world. And you know, it takes a lot
+
+1084
+01:39:31,920 --> 01:39:37,120
+to cross that barrier. And I think we've seen the same with AI systems, which is that maybe until
+
+1085
+01:39:37,120 --> 01:39:42,240
+very recently, it's always been easier to craft a specific solution to a problem like chess,
+
+1086
+01:39:42,240 --> 01:39:46,160
+than it has been to build a general learning system that can potentially do many things.
+
+1087
+01:39:46,160 --> 01:39:52,000
+Because initially, that system will be way worse than less efficient than the specialized system.
+
+1088
+01:39:52,000 --> 01:39:59,440
+So one of the interesting quirks of the human mind of this evolved system is that it appears
+
+1089
+01:39:59,440 --> 01:40:06,400
+to be conscious. This thing that we don't quite understand, but it seems very, very special
+
+1090
+01:40:06,400 --> 01:40:12,160
+is ability to have a subjective experience that it feels like something to eat a cookie,
+
+1091
+01:40:12,160 --> 01:40:17,120
+the deliciousness of it or see a color and that kind of stuff. Do you think in order to solve
+
+1092
+01:40:17,120 --> 01:40:22,800
+intelligence, we also need to solve consciousness along the way? Do you think AI systems need to
+
+1093
+01:40:22,800 --> 01:40:29,600
+have consciousness in order to be truly intelligent? Yeah, we thought about this a lot actually.
+
+1094
+01:40:29,600 --> 01:40:35,680
+And I think that my guess is that consciousness and intelligence are double dissociable.
+
+1095
+01:40:35,680 --> 01:40:40,800
+So you can have one without the other both ways. And I think you can see that with consciousness
+
+1096
+01:40:40,800 --> 01:40:46,880
+in that I think some animals pets, if you have a pet dog or something like that, you can see some
+
+1097
+01:40:46,880 --> 01:40:53,520
+of the higher animals and dolphins, things like that are half self awareness and a very sociable
+
+1098
+01:40:54,560 --> 01:41:00,480
+seem to dream. Those kinds of a lot of the traits one would regard as being kind of conscious
+
+1099
+01:41:00,480 --> 01:41:06,640
+and self aware. But yet they're not that smart. So they're not that intelligent by,
+
+1100
+01:41:06,640 --> 01:41:10,960
+by say IQ standards or something like that. Yeah, it's also possible that our understanding
+
+1101
+01:41:10,960 --> 01:41:17,440
+of intelligence is flawed, like putting an IQ to it. Sure. Maybe the thing that a dog can do is
+
+1102
+01:41:17,440 --> 01:41:23,280
+actually gone very far along the path of intelligence and we humans are just able to play chess and
+
+1103
+01:41:23,280 --> 01:41:27,840
+maybe write poems. Right. But if we go back to the idea of AGI in general intelligence,
+
+1104
+01:41:27,840 --> 01:41:31,120
+you know, dogs are very specialized, right? Most animals are pretty specialized. They can be
+
+1105
+01:41:31,120 --> 01:41:35,680
+amazing at what they do, but they're like kind of elite sports sports people or something, right?
+
+1106
+01:41:35,680 --> 01:41:41,200
+So they do one thing extremely well because their entire brain is optimized. They have somehow convinced
+
+1107
+01:41:41,200 --> 01:41:46,320
+the entirety of the human population to feed them and service them. So in some way they're controlling.
+
+1108
+01:41:46,320 --> 01:41:51,520
+Yes, exactly. Well, we co-evolved to some crazy degree, right? Including the way the dogs,
+
+1109
+01:41:51,520 --> 01:41:57,200
+you know, even even wag their tails and twist their noses, right? We find we find inexorably cute.
+
+1110
+01:41:58,480 --> 01:42:03,680
+But I think you can also see intelligence on the other side. So systems like artificial systems
+
+1111
+01:42:03,680 --> 01:42:09,600
+that are amazingly smart at certain things like maybe playing go or in chess and other things,
+
+1112
+01:42:09,600 --> 01:42:15,520
+but they don't feel at all in any shape or form conscious in the way that, you know, you do to
+
+1113
+01:42:15,520 --> 01:42:24,560
+to me or I do to you. And I think actually building AGI is these intelligent constructs is one of
+
+1114
+01:42:24,560 --> 01:42:30,160
+the best ways to explore the mystery of consciousness, to break it down because we're going to have
+
+1115
+01:42:30,160 --> 01:42:37,840
+devices that are pretty smart at certain things or capable at certain things, but potentially won't
+
+1116
+01:42:37,840 --> 01:42:43,040
+have any semblance of self-awareness or other things. And in fact, I would advocate if there's a
+
+1117
+01:42:43,040 --> 01:42:48,080
+choice, building systems in the first place AGI systems that are not conscious to begin with
+
+1118
+01:42:48,800 --> 01:42:53,840
+are just tools until we understand them better and the capabilities better.
+
+1119
+01:42:53,840 --> 01:43:01,040
+So on that topic, just not as the sea of deep mind, just as a human being, let me ask you about
+
+1120
+01:43:01,040 --> 01:43:08,640
+this one particular anecdotal evidence of the Google engineer who made a comment or believed
+
+1121
+01:43:08,640 --> 01:43:15,040
+that there is some aspect of a language model, the Lambda language model that exhibited sentience.
+
+1122
+01:43:15,840 --> 01:43:20,000
+So you said you believe there might be a responsibility to build systems that are not
+
+1123
+01:43:20,000 --> 01:43:25,360
+sent yet. And this experience of a particular engineer, I think, I'd love to get your general
+
+1124
+01:43:25,360 --> 01:43:30,800
+opinion on this kind of thing, but I think it will happen more and more and more, which not one
+
+1125
+01:43:30,800 --> 01:43:34,640
+engineer is, but when people out there that don't have an engineer background start interacting
+
+1126
+01:43:34,640 --> 01:43:42,080
+with increasingly intelligent systems, we anthropomorphize them. They start to have deep, impactful
+
+1127
+01:43:43,520 --> 01:43:49,920
+interactions with us in a way that we miss them when they're gone. And we sure as heck feel like
+
+1128
+01:43:49,920 --> 01:43:55,760
+they're living entities, self-aware entities, and maybe even we project sentience onto them.
+
+1129
+01:43:55,760 --> 01:44:02,960
+So what's your thought about this particular system? Have you ever met a language model
+
+1130
+01:44:02,960 --> 01:44:10,400
+that's sentient? No, no. What do you make of the case of when you kind of feel that there's
+
+1131
+01:44:10,400 --> 01:44:15,040
+some elements of sentience to this system? Yeah, so this is an interesting question and
+
+1132
+01:44:15,040 --> 01:44:20,640
+obviously a very fundamental one. So the first thing to say is I think that none of the systems
+
+1133
+01:44:20,640 --> 01:44:26,160
+we have today, I would say even have one Iota of semblance of consciousness or sentience,
+
+1134
+01:44:26,160 --> 01:44:31,760
+that's my personal feeling interacting with them every day. So I think this way premature to be
+
+1135
+01:44:31,760 --> 01:44:36,480
+discussing what that engineer talked about. I think at the moment it's more of projection of
+
+1136
+01:44:36,480 --> 01:44:43,920
+other way our own minds work, which is to see a sort of purpose and direction in almost anything
+
+1137
+01:44:43,920 --> 01:44:51,280
+that we, our brains are trained to interpret agency, basically in things, even inanimate things
+
+1138
+01:44:51,280 --> 01:44:56,960
+sometimes. And of course with a language system because language is so fundamental to intelligence
+
+1139
+01:44:56,960 --> 01:45:02,320
+that's going to be easy for us to anthropomorphize that. I mean back in the day, even the first,
+
+1140
+01:45:03,680 --> 01:45:09,520
+the dumbest sort of template chatbots ever, Eliza and the yolk of the original chatbots back in the
+
+1141
+01:45:09,520 --> 01:45:14,560
+60s, fooled some people under certain circumstances, right? It pretended to be a psychologist, so just
+
+1142
+01:45:14,560 --> 01:45:20,640
+basically rabbit back to you, the same question you asked it back to you. And some people believe
+
+1143
+01:45:20,640 --> 01:45:24,640
+that. So I don't think we can, this is why I think the chewing test is a little bit flawed as a
+
+1144
+01:45:24,640 --> 01:45:30,960
+formal test because it depends on the sophistication of the of the judge, whether or not they are
+
+1145
+01:45:30,960 --> 01:45:37,760
+qualified to make that distinction. So I think we should talk to, you know, the top philosophers
+
+1146
+01:45:37,760 --> 01:45:42,000
+about this, people like Daniel Dennett and David Charmers and others who've obviously thought
+
+1147
+01:45:42,000 --> 01:45:47,600
+deeply about consciousness. Of course, consciousness itself hasn't been well, there's no agreed definition.
+
+1148
+01:45:47,600 --> 01:45:54,080
+If I was to, you know, speculate about that, you know, I kind of, the, the working definition,
+
+1149
+01:45:54,080 --> 01:45:58,640
+I like is it's the way information feels when, you know, it gets processed. I think maybe Max
+
+1150
+01:45:58,640 --> 01:46:02,560
+Tecmar came up with that. I like that idea. I don't know if it helps us get towards any more
+
+1151
+01:46:02,560 --> 01:46:08,800
+operational thing, but it's, it's, I think it's a nice way of viewing it. I think we can obviously
+
+1152
+01:46:08,800 --> 01:46:14,240
+see from neuroscience certain prerequisites that require, like self awareness, I think is necessary,
+
+1153
+01:46:14,240 --> 01:46:20,400
+but not sufficient component, this idea of a self and other and set of coherent preferences
+
+1154
+01:46:20,400 --> 01:46:25,680
+that the coherent over time, you know, these things are maybe memory. These things are probably
+
+1155
+01:46:25,680 --> 01:46:31,680
+needed for a sentient or conscious being. But the reason, the difficult thing I think for us,
+
+1156
+01:46:31,680 --> 01:46:36,320
+when we get, and I think this is a really interesting philosophical debate, is when we get closer to
+
+1157
+01:46:36,320 --> 01:46:42,880
+AGI and, you know, and, and, and much more powerful systems than we have today, how are we going
+
+1158
+01:46:42,880 --> 01:46:48,560
+to make this judgment? And one way, which is the cheering test is sort of a behavioral judgment,
+
+1159
+01:46:48,560 --> 01:46:55,120
+is, is the system exhibiting all the behaviors that a human sentient or a sentient being would,
+
+1160
+01:46:55,120 --> 01:46:59,280
+would, would exhibit? Is it answering the right questions? Is it saying the right things? Is it
+
+1161
+01:46:59,280 --> 01:47:06,800
+indistinguishable from a human, and so on? But I think there's a second thing that makes us,
+
+1162
+01:47:06,800 --> 01:47:11,360
+as humans, regard each other as sentient, right? Why do we, why do we think this? And I debated
+
+1163
+01:47:11,360 --> 01:47:15,440
+this with Daniel Dennett. And I think there's a second reason that's over, often overlooked,
+
+1164
+01:47:15,440 --> 01:47:20,320
+which is that we're running on the same substrate, right? So if we're exhibiting the same behavior,
+
+1165
+01:47:21,040 --> 01:47:26,080
+more or less, as humans, and we're running on the same, you know, carbon-based biological substrate,
+
+1166
+01:47:26,080 --> 01:47:31,760
+the squishy, you know, few pounds of flesh in our skulls, then the most parsimonious, I think,
+
+1167
+01:47:31,760 --> 01:47:36,480
+explanation is that you're feeling the same thing as I'm feeling, right? But we will never have
+
+1168
+01:47:36,480 --> 01:47:42,640
+that second part, the substrate equivalence with a machine, right? So we will have to only judge
+
+1169
+01:47:42,640 --> 01:47:47,440
+based on the behavior. And I think the substrate equivalence is a critical part of why we make
+
+1170
+01:47:47,440 --> 01:47:52,000
+assumptions that we're conscious. And in fact, even with animals, high level animals, why we think
+
+1171
+01:47:52,000 --> 01:47:55,200
+they might be, because they're exhibiting some of the behaviors we would expect from a sentient
+
+1172
+01:47:55,200 --> 01:47:59,440
+animal. And we know they're made of the same things biological neurons. So we're going to have to
+
+1173
+01:47:59,440 --> 01:48:06,960
+come up with explanations or models of the gap between substrate differences between machines
+
+1174
+01:48:06,960 --> 01:48:12,960
+and humans to get anywhere beyond the behavioral. But to me, sort of the practical question is
+
+1175
+01:48:13,840 --> 01:48:19,120
+very interesting and very important. When you have millions, perhaps billions of people believing
+
+1176
+01:48:19,120 --> 01:48:25,360
+that you have a sentient AI, believing what that Google engineer believed, which I just see as an
+
+1177
+01:48:25,360 --> 01:48:33,040
+obvious, very near term future thing. Certainly on the path to AGI, how does that change the world?
+
+1178
+01:48:33,040 --> 01:48:39,040
+What's the responsibility of the AI system to help those millions of people? And also what's the
+
+1179
+01:48:39,040 --> 01:48:47,360
+ethical thing? Because you can, you can make a lot of people happy by creating a meaningful deep
+
+1180
+01:48:47,360 --> 01:48:53,680
+experience with a system that's faking it before it makes it. Yeah. And I don't,
+
+1181
+01:48:54,560 --> 01:49:01,840
+are we the right, who is to say, what's the right thing to do? Should AI always be tools?
+
+1182
+01:49:01,840 --> 01:49:07,840
+Like, why, why are we constraining AI's to always be tools as opposed to friends?
+
+1183
+01:49:07,840 --> 01:49:14,000
+Yeah. I think, well, I mean, these are, you know, fantastic questions and also critical ones.
+
+1184
+01:49:14,000 --> 01:49:18,880
+And we've been thinking about this since the start of DeepMind and before that, because we plan
+
+1185
+01:49:18,880 --> 01:49:24,720
+for success and, you know, how, how, you know, however, remote that looked like back in 2010.
+
+1186
+01:49:24,720 --> 01:49:28,400
+And we've always had sort of these ethical considerations as fundamental at DeepMind.
+
+1187
+01:49:29,520 --> 01:49:34,080
+And my current thinking on the language models is and large models is they're not ready,
+
+1188
+01:49:34,080 --> 01:49:39,360
+we don't understand them well enough yet. And, you know, in terms of analysis tools and,
+
+1189
+01:49:39,360 --> 01:49:45,120
+and guardrails, what they can and can't do and so on to deploy them at scale, because I think,
+
+1190
+01:49:45,120 --> 01:49:49,440
+you know, there are big still ethical questions like should an AI system always announce that it is
+
+1191
+01:49:49,440 --> 01:49:55,200
+an AI system to begin with, probably yes. What do you do about answering those philosophical
+
+1192
+01:49:55,200 --> 01:50:00,880
+questions about the feelings people may have about AI systems perhaps incorrectly attributed?
+
+1193
+01:50:00,880 --> 01:50:06,160
+So I think there's a whole bunch of research that needs to be done first to responsibly,
+
+1194
+01:50:06,160 --> 01:50:09,920
+before we're, you know, you can responsibly deploy these systems at scale. That would be at least
+
+1195
+01:50:09,920 --> 01:50:16,320
+be my current position. Over time, I'm very confident we'll have those tools like interpretability
+
+1196
+01:50:16,320 --> 01:50:24,080
+questions and analysis questions. And then with the ethical quandary, you know, I think there,
+
+1197
+01:50:24,960 --> 01:50:31,600
+it's important to look beyond just science. That's why I think philosophy, social sciences,
+
+1198
+01:50:31,600 --> 01:50:37,280
+even theology, other things like that come into it where what it, you know, arts and humanities,
+
+1199
+01:50:37,280 --> 01:50:41,840
+what what what does it mean to be human and the spirit of being human and to enhance that
+
+1200
+01:50:41,840 --> 01:50:46,240
+and the human condition, right? And allow us to experience things we could never experience before
+
+1201
+01:50:46,240 --> 01:50:51,600
+and improve the overall human condition and humanity overall, you know, get radical abundance,
+
+1202
+01:50:51,600 --> 01:50:56,160
+solve many scientific problem solved disease. So this is the era I think this is the amazing
+
+1203
+01:50:56,160 --> 01:51:01,280
+era I think we're heading into if we do it right. But we've got to be careful. We've already seen
+
+1204
+01:51:01,280 --> 01:51:08,240
+with things like social media how dual use technologies can be misused by firstly, by by bad
+
+1205
+01:51:08,240 --> 01:51:12,880
+you, you know, people, bad actors or naive actors or crazy actors, right? So that's that set of
+
+1206
+01:51:12,880 --> 01:51:18,320
+just the common or garden use, you know, misuse of existing dual use technology. And then,
+
+1207
+01:51:18,320 --> 01:51:22,960
+of course, there's an additional thing that has to be overcome with AI that eventually it may
+
+1208
+01:51:22,960 --> 01:51:29,760
+have its own agency. So it could be good or bad in it in it in it itself. So I think these
+
+1209
+01:51:29,760 --> 01:51:35,600
+questions have to be approached very carefully using the scientific method, I would say, in terms
+
+1210
+01:51:35,600 --> 01:51:41,200
+of hypothesis generation, careful control testing, not live AB testing out in the world because
+
+1211
+01:51:41,200 --> 01:51:46,960
+with powerful dual technologies like AI, if something goes wrong, it may cause, you know, a lot
+
+1212
+01:51:46,960 --> 01:51:52,240
+of harm before you can fix it. It's not like a, you know, an imaging app or game app where,
+
+1213
+01:51:52,240 --> 01:51:57,840
+you know, if it if something goes wrong, it's relatively easy to fix and the harm is relatively small.
+
+1214
+01:51:57,840 --> 01:52:04,320
+So I think it comes with, you know, the usual cliche of like with a lot of power comes a lot
+
+1215
+01:52:04,320 --> 01:52:09,120
+of responsibility. And I think that's the case here with things like AI given the enormous
+
+1216
+01:52:09,120 --> 01:52:16,080
+opportunity in front of us. And I think we need a lot of voices and as many inputs into things like
+
+1217
+01:52:16,080 --> 01:52:21,360
+the design of the systems and the values they should have and what goals should they be put to,
+
+1218
+01:52:22,240 --> 01:52:27,200
+I think as wide a group of voices as possible beyond just the technologist is needed to input
+
+1219
+01:52:27,200 --> 01:52:31,680
+into that and to have a say in that, especially when it comes to deployment of these systems,
+
+1220
+01:52:31,680 --> 01:52:35,360
+which is when the rubber really hits the road, it really affects the general person in the street
+
+1221
+01:52:35,360 --> 01:52:40,880
+rather than fundamental research. And that's why I say, I think as a first step, it would be better
+
+1222
+01:52:40,880 --> 01:52:46,400
+if we have the choice to build these systems as tools to give, and I'm not saying that it should
+
+1223
+01:52:46,400 --> 01:52:50,640
+never, they should never go beyond tools because of course the potential is there for it to go
+
+1224
+01:52:50,640 --> 01:52:57,200
+way beyond just tools. But I think that would be a good first step in order for us to, you know,
+
+1225
+01:52:57,200 --> 01:53:02,800
+allow us to carefully experiment and understand what these things can do. So the leap between tool,
+
+1226
+01:53:02,800 --> 01:53:09,760
+the sentient entity being as long as you take very care of us. Yes. Let me ask a dark personal
+
+1227
+01:53:09,760 --> 01:53:14,560
+question. So you're one of the most brilliant people in the AI community, you also want
+
+1228
+01:53:14,560 --> 01:53:21,360
+on the most kind. And if I may say sort of loved people in the community, that said,
+
+1229
+01:53:24,160 --> 01:53:32,640
+creation of a super intelligent AI system would be one of the most powerful things in the world,
+
+1230
+01:53:32,640 --> 01:53:39,600
+tools or otherwise. And again, as the old saying goes, power corrupts and absolute power corrupts,
+
+1231
+01:53:39,600 --> 01:53:50,160
+absolutely. You are likely to be one of the people. I would say probably the most likely person
+
+1232
+01:53:50,160 --> 01:53:57,200
+to be in the control of such a system. Do you think about the corrupting nature of power when
+
+1233
+01:53:57,200 --> 01:54:04,800
+you talk about these kinds of systems that as all dictators and people have caused atrocities
+
+1234
+01:54:04,800 --> 01:54:10,800
+in the past always think they're doing good. But they don't do good because the powers polluted
+
+1235
+01:54:10,800 --> 01:54:15,280
+their mind about what is good and what is evil. Do you think about this stuff? Are we just
+
+1236
+01:54:15,280 --> 01:54:19,680
+focused on language model? No, I think about them all the time. And, you know, I think
+
+1237
+01:54:20,480 --> 01:54:26,160
+what are the defences against that? I think one thing is to remain very grounded and sort of humble,
+
+1238
+01:54:26,160 --> 01:54:31,120
+no matter what you do or achieve. And I try to do that. I might, you know, my best friends are
+
+1239
+01:54:31,120 --> 01:54:36,880
+still my set of friends from my undergraduate Cambridge days, my family's, you know, and friends
+
+1240
+01:54:36,880 --> 01:54:43,200
+are very important. I've always, I think trying to be a multi-disciplinary person, it helps to keep
+
+1241
+01:54:43,200 --> 01:54:47,440
+you humble because no matter how good you are at one topic, someone will be better than you at that.
+
+1242
+01:54:47,440 --> 01:54:53,680
+And always relearning a new topic again from scratch is a new field is very humbling, right? So
+
+1243
+01:54:53,680 --> 01:54:58,880
+for me, that's been biology over the last five years. You know, huge area topic and it's been,
+
+1244
+01:54:58,880 --> 01:55:02,880
+and I just love doing that, but it helps to keep you grounded, like you can keep you open-minded.
+
+1245
+01:55:04,240 --> 01:55:10,000
+And then the other important thing is to have a really good, amazing set of people around you at
+
+1246
+01:55:10,000 --> 01:55:15,200
+your company or your organization who are also very ethical and grounded themselves and help
+
+1247
+01:55:15,200 --> 01:55:19,680
+to keep you that way. And then ultimately, just to answer your question, I hope we're going to be
+
+1248
+01:55:19,680 --> 01:55:26,080
+a big part of birthing AI and that being the greatest benefit to humanity of any tool or technology
+
+1249
+01:55:26,080 --> 01:55:33,200
+ever and getting us into a world of radical abundance and curing diseases and solving many of the
+
+1250
+01:55:33,200 --> 01:55:37,440
+big challenges we have in front of us and then ultimately, you know, help the ultimate flourishing
+
+1251
+01:55:37,440 --> 01:55:42,160
+of humanity to travel the stars and find those aliens if they are there. And if they're not there,
+
+1252
+01:55:42,160 --> 01:55:47,200
+find out why they're not there, what is going on here in the universe? This is all to come,
+
+1253
+01:55:47,200 --> 01:55:52,880
+and that's what I've always dreamed about. But I don't think, I think AI is too big an idea,
+
+1254
+01:55:52,880 --> 01:55:57,600
+it's not going to be, there'll be a certain set of pioneers who get there first. I hope that
+
+1255
+01:55:57,600 --> 01:56:01,920
+we're in the vanguard so we can influence how that goes. And I think it matters who builds,
+
+1256
+01:56:01,920 --> 01:56:07,920
+which cultures they come from and what values they have, the builders of AI systems. Because I
+
+1257
+01:56:07,920 --> 01:56:11,440
+think even though the AI systems are going to learn for itself most of its knowledge,
+
+1258
+01:56:11,440 --> 01:56:16,640
+there'll be a residue in the system of the culture and the values of the creators of that system.
+
+1259
+01:56:17,520 --> 01:56:22,240
+And there's interesting questions to discuss about that geopolitically, you know, different cultures
+
+1260
+01:56:22,240 --> 01:56:26,640
+as we're in a more fragmented world than ever. Unfortunately, I think in terms of global cooperation,
+
+1261
+01:56:27,360 --> 01:56:32,000
+we see that in things like climate where we can't seem to get our act together globally to
+
+1262
+01:56:32,000 --> 01:56:36,480
+cooperate on these pressing matters. I hope that will change over time. Perhaps, you know,
+
+1263
+01:56:36,480 --> 01:56:40,640
+if we get to an era of radical abundance, we don't have to be so competitive anymore. Maybe we
+
+1264
+01:56:40,640 --> 01:56:48,160
+can be more cooperative if resources aren't so scarce. It's true that in terms of power corrupting
+
+1265
+01:56:48,160 --> 01:56:53,200
+and leading to destructive things, it seems that some of the atrocities of the past happen when
+
+1266
+01:56:53,200 --> 01:56:57,760
+there's a significant constraint on resources. I think that's the first thing. I don't think
+
+1267
+01:56:57,760 --> 01:57:02,880
+that's enough. I think scarcity is one thing that's led to competition, you know, sort of zero
+
+1268
+01:57:02,880 --> 01:57:06,720
+sum game thinking. I would like us to all be in a positive some world. And I think for that,
+
+1269
+01:57:06,720 --> 01:57:10,960
+you have to remove scarcity. I don't think that's enough, unfortunately, to get well-peace because
+
+1270
+01:57:10,960 --> 01:57:15,520
+there's also other corrupting things like wanting power over people and this kind of stuff, which
+
+1271
+01:57:15,520 --> 01:57:23,200
+is not necessarily satisfied by just abundance, but I think it will help. But I think ultimately,
+
+1272
+01:57:23,200 --> 01:57:27,600
+AI is not going to be run by any one person or one organization. I think it should belong to the
+
+1273
+01:57:27,600 --> 01:57:33,680
+world, belong to humanity. And I think there'll be many ways this will happen. And ultimately,
+
+1274
+01:57:35,200 --> 01:57:42,000
+everybody should have a say in that. Do you have advice for young people in high school and
+
+1275
+01:57:42,000 --> 01:57:50,560
+college? Maybe if they're interested in AI or interesting having a big impact on the world,
+
+1276
+01:57:50,560 --> 01:57:54,800
+what they should do to have a career, they can be proud of or to have a life that can be proud of.
+
+1277
+01:57:54,800 --> 01:57:59,920
+I love giving talks to the next generation. What I say to them is actually two things. I think the
+
+1278
+01:57:59,920 --> 01:58:05,440
+most important things to learn about and to find out about when you're young is what are your true
+
+1279
+01:58:05,440 --> 01:58:10,880
+passions, is first of all, as two things. One is find your true passions. And I think you can do
+
+1280
+01:58:10,880 --> 01:58:15,680
+that by the way to do that is to explore as many things as possible when you're young and you
+
+1281
+01:58:15,680 --> 01:58:21,280
+have the time and you can take those risks. I would also encourage people to look at the finding
+
+1282
+01:58:21,280 --> 01:58:26,320
+the connections between things in a unique way. I think that's a really great way to find a
+
+1283
+01:58:26,320 --> 01:58:33,840
+passion. Second thing I would say advises know yourself. So spend a lot of time understanding
+
+1284
+01:58:33,840 --> 01:58:38,800
+how you work best. Like what are the optimal times to work? What are the optimal ways that you
+
+1285
+01:58:38,800 --> 01:58:45,920
+study? How do you deal with pressure? Test yourself in various scenarios and try and improve your
+
+1286
+01:58:45,920 --> 01:58:52,000
+weaknesses. But also find out what your unique skills and strengths are and then hone those.
+
+1287
+01:58:52,000 --> 01:58:56,880
+So then that's what will be your super value in the world later on. And if you can then combine
+
+1288
+01:58:56,880 --> 01:59:02,960
+those two things and find passions that you're genuinely excited about that intersect with what
+
+1289
+01:59:02,960 --> 01:59:08,480
+your unique strong skills are, then you're you know, you're onto something incredible and you know,
+
+1290
+01:59:08,480 --> 01:59:13,440
+I think you can make a huge difference in the world. So let me ask about know yourself. This is fun.
+
+1291
+01:59:13,440 --> 01:59:18,960
+This is fun. Quick questions about day in the life. The perfect day. The perfect product of
+
+1292
+01:59:18,960 --> 01:59:26,000
+day in life with demos has helped. Yeah. Maybe, maybe these days, you're, there's a lot involved.
+
+1293
+01:59:26,000 --> 01:59:33,680
+So maybe slightly younger demos. Yeah. When you could focus on a single project, maybe. How early
+
+1294
+01:59:33,680 --> 01:59:37,680
+do you wake up? Are you night owl? Do you wake up early in the morning? What are some interesting
+
+1295
+01:59:37,680 --> 01:59:45,280
+habits? How many dozens of cups of coffees do you drink a day? What's the computer that you use?
+
+1296
+01:59:46,160 --> 01:59:51,840
+What's the setup? How many screens? What kind of keyboard are we talking? EMAX VIM or we're talking
+
+1297
+01:59:51,840 --> 01:59:57,760
+something more modern? There's a bunch of those questions. So maybe day in the life. What's the
+
+1298
+01:59:57,760 --> 02:00:03,280
+perfect day involved? Well, these days it's quite different from say 10, 20 years ago. Back 10, 20
+
+1299
+02:00:03,280 --> 02:00:10,720
+years ago, it would have been, you know, a whole day of research, individual research or programming,
+
+1300
+02:00:10,720 --> 02:00:15,680
+doing some experiment, neuroscience computer science experiment, reading lots of research papers,
+
+1301
+02:00:15,680 --> 02:00:25,120
+and then perhaps at night time, you know, reading science fiction books or playing some games.
+
+1302
+02:00:25,120 --> 02:00:31,600
+But lots of focus, so like a deep focused work on whether it's programming or reading research papers.
+
+1303
+02:00:31,600 --> 02:00:36,960
+Yes. So that would be lots of deep, you know, focus work. These days, for the last sort of,
+
+1304
+02:00:36,960 --> 02:00:41,760
+I guess, you know, five to 10 years, I've actually got quite a structure that works very well for
+
+1305
+02:00:41,760 --> 02:00:47,520
+me now, which is that I'm a night complete night owl always have been. So I optimize for that.
+
+1306
+02:00:47,520 --> 02:00:53,360
+So, you know, I basically do a normal day's work, get into work about 11 o'clock and sort of do
+
+1307
+02:00:53,360 --> 02:01:00,080
+work to about seven in the office. And I will arrange back to back meetings for the entire time
+
+1308
+02:01:00,080 --> 02:01:05,360
+of that. And with as many, as many people as possible. So that's my collaboration, management,
+
+1309
+02:01:05,360 --> 02:01:12,800
+part of the day. Then I go home, spend time with the family and friends, have dinner, relax a
+
+1310
+02:01:12,800 --> 02:01:17,280
+little bit. And then I start a second day of work. I call it my second day of work around 10 p.m.
+
+1311
+02:01:17,280 --> 02:01:22,400
+11 p.m. And that's the time until about the small hours of the morning, four, five in the morning,
+
+1312
+02:01:22,400 --> 02:01:29,280
+where I will do my thinking and reading a research, writing research papers. Sadly,
+
+1313
+02:01:29,280 --> 02:01:35,280
+don't have time to code anymore, but it's not efficient to do that these days, given the amount
+
+1314
+02:01:35,280 --> 02:01:41,440
+of time I have. But that's when I do, you know, maybe do the long kind of stretches of thinking
+
+1315
+02:01:41,440 --> 02:01:45,760
+and planning. And then probably, you know, using, using email or other things, I would set,
+
+1316
+02:01:45,760 --> 02:01:50,080
+I would fire off a lot of things to my team to deal with the next morning. So I actually
+
+1317
+02:01:50,080 --> 02:01:54,720
+thinking about this overnight, we should go for this project or arrange this meeting the next day.
+
+1318
+02:01:54,720 --> 02:01:58,800
+When you think it through a problem, are you talking about sheet of paper or the pen pen? Is there some
+
+1319
+02:01:58,800 --> 02:02:05,200
+it depends structure? Yeah, I like process. I'm still like pencil and paper best for working out things. But
+
+1320
+02:02:05,200 --> 02:02:09,440
+these days, it's just so efficient to read research papers just on the screen. I still often print
+
+1321
+02:02:09,440 --> 02:02:14,400
+them out, actually, I still prefer to mark out things. And I find it goes into the brain quick
+
+1322
+02:02:14,400 --> 02:02:18,960
+better and sticks in the brain better when you're, you're still using physical pen and pencil and
+
+1323
+02:02:18,960 --> 02:02:23,440
+paper. So you take notes with the, I have lots of notes, electronic ones and also, um,
+
+1324
+02:02:23,440 --> 02:02:29,680
+whole stacks of notebooks that I use at home, yeah. On some of these most challenging next steps,
+
+1325
+02:02:29,680 --> 02:02:35,920
+for example, stuff none of us know about that you're working on, you're thinking, there's some
+
+1326
+02:02:35,920 --> 02:02:40,320
+deep thinking required there, right? Like, what is the right problem? What is the right approach?
+
+1327
+02:02:41,280 --> 02:02:44,960
+Because you're going to have to invest a huge amount of time for the whole team. They're going
+
+1328
+02:02:44,960 --> 02:02:50,080
+to have to pursue this thing. What's the right way to do it? Is RL going to work here or not?
+
+1329
+02:02:50,080 --> 02:02:55,680
+Yes. What's the right thing to try? What's the right benchmark to you? Do you need to construct
+
+1330
+02:02:55,680 --> 02:03:00,000
+the benchmark from scratch? All those kinds of things. Yes. So I think of all those kind of things
+
+1331
+02:03:00,000 --> 02:03:06,560
+in the nighttime phase, but also much more. I find, I've always found the quiet hours of the morning
+
+1332
+02:03:07,520 --> 02:03:13,200
+when everyone's asleep. It's super quiet outside. I love that time. It's the golden hours,
+
+1333
+02:03:13,200 --> 02:03:20,640
+between one and three in the morning, put some music on, some inspiring music on, and then think
+
+1334
+02:03:20,640 --> 02:03:26,880
+these deep thoughts. That's when I would read my philosophy books and spinozers, my recent
+
+1335
+02:03:26,880 --> 02:03:34,320
+favorite can, all these things. I read about a great scientist of history, how they did things,
+
+1336
+02:03:34,320 --> 02:03:41,120
+how they thought things. That's when you do all your creative thinking. It's good. I think people
+
+1337
+02:03:41,120 --> 02:03:47,600
+recommend you do your creative thinking in one block. The way I organize the day, that way I don't
+
+1338
+02:03:47,600 --> 02:03:54,640
+get interrupted, because obviously no one else is up at those times. I can go, it says, I can
+
+1339
+02:03:54,640 --> 02:04:00,960
+get super deep and super into flow. The other nice thing about doing it nighttime-wise is if I'm
+
+1340
+02:04:00,960 --> 02:04:06,720
+really onto something or I've got really deep into something, I can choose to extend it,
+
+1341
+02:04:06,720 --> 02:04:10,640
+and I'll go into six in the morning, whatever. Then I'll just pay for it the next day,
+
+1342
+02:04:10,640 --> 02:04:15,200
+because I'll be a bit tired and I won't be my best, but that's fine. I can decide, looking at my
+
+1343
+02:04:15,200 --> 02:04:20,640
+schedule the next day, and given where I'm at with this particular thought or creative idea,
+
+1344
+02:04:20,640 --> 02:04:26,080
+that I'm going to pay that cost the next day. I think that's more flexible than morning people
+
+1345
+02:04:26,080 --> 02:04:30,800
+who do that. They get up at four in the morning. They can also do those golden hours then,
+
+1346
+02:04:30,800 --> 02:04:35,920
+but then their schedule day starts at breakfast, AAM, whatever they have their first meeting.
+
+1347
+02:04:35,920 --> 02:04:40,720
+Then it's hard, you have to reschedule day if you and flow. That could be true. That's a special
+
+1348
+02:04:40,720 --> 02:04:46,880
+threat of thoughts that you're too passionate about. This is where some of the greatest ideas could
+
+1349
+02:04:46,880 --> 02:04:54,000
+potentially come is when you just lose yourself late. For the meetings, you're loading in really
+
+1350
+02:04:54,000 --> 02:04:58,720
+hard problems in a very short amount of time, so you have to do some first principles thinking
+
+1351
+02:04:58,720 --> 02:05:03,600
+here. What's the problem? What's the state of things? What's the right next step? You have to get
+
+1352
+02:05:03,600 --> 02:05:08,080
+really good at context-witching, which is one of the hardest things, because especially as we do
+
+1353
+02:05:08,080 --> 02:05:12,480
+so many things, if you include all the scientific things, we do scientific fields we're working in.
+
+1354
+02:05:12,480 --> 02:05:18,800
+These are entire complex fields in themselves, and you have to keep up to abreast of that.
+
+1355
+02:05:18,800 --> 02:05:24,880
+But I enjoy it. I've always been a generalist in a way, and that's actually what happened with my
+
+1356
+02:05:24,880 --> 02:05:29,760
+games career after chess. One of the reasons I stopped playing chess was because I got into
+
+1357
+02:05:29,760 --> 02:05:33,840
+computers, but also I started realizing there were many other great games out there to play too.
+
+1358
+02:05:33,840 --> 02:05:38,480
+I've always been that way in client multidisciplinary, and there's too many interesting things in
+
+1359
+02:05:38,480 --> 02:05:44,080
+the world to spend all your time just on one thing. You mentioned Spinoza. I've got to ask the big,
+
+1360
+02:05:44,720 --> 02:05:49,520
+ridiculously big question about life. What do you think is the meaning of this whole thing?
+
+1361
+02:05:50,400 --> 02:05:55,600
+Why are we humans here? You've already mentioned that perhaps the universe created us.
+
+1362
+02:05:55,600 --> 02:06:00,080
+Is that why you think we're here to understand how the universe is?
+
+1363
+02:06:00,080 --> 02:06:06,400
+I think my answer to that would be, at least the life I'm living is to gain and understand
+
+1364
+02:06:07,200 --> 02:06:11,200
+knowledge, to gain knowledge and understand the universe. That's what I think.
+
+1365
+02:06:12,080 --> 02:06:15,360
+I can't see any higher purpose than that if you think back to the classical Greeks,
+
+1366
+02:06:15,360 --> 02:06:21,440
+the virtue of gaining knowledge. I think it's one of the few true virtues is to understand
+
+1367
+02:06:21,440 --> 02:06:28,320
+the world around us and the context and humanity better. I think if you do that, you become more
+
+1368
+02:06:28,320 --> 02:06:33,440
+compassionate and more understanding yourself and more tolerant, and all these other things
+
+1369
+02:06:33,440 --> 02:06:38,560
+may flow from that. To me, understanding the nature of reality, that is the biggest question.
+
+1370
+02:06:38,560 --> 02:06:42,640
+What is going on here is sometimes the colloquial way I say. What is really going on here?
+
+1371
+02:06:43,440 --> 02:06:49,920
+It's so mysterious. I feel like we're in some huge puzzle. The world is also seems to be the
+
+1372
+02:06:49,920 --> 02:06:55,040
+universe seems to be structured in a way. Why is it structured in a way that science is even
+
+1373
+02:06:55,040 --> 02:07:01,920
+possible? The scientific method works. Things are repeatable. It feels like it's almost structured
+
+1374
+02:07:01,920 --> 02:07:08,160
+in a way to be conducive to gaining knowledge. Why should computers be even possible? Isn't that
+
+1375
+02:07:08,160 --> 02:07:15,120
+amazing that computational or electronic devices can be possible? They're made of sand,
+
+1376
+02:07:15,120 --> 02:07:20,320
+our most common element that we have, silicon on the Earth's crust. They could have been made
+
+1377
+02:07:20,320 --> 02:07:25,520
+of diamond or something. We would have only had one computer. A lot of things are slightly
+
+1378
+02:07:25,520 --> 02:07:35,120
+suspicious to me. This puzzle, what it takes to design a game that's really fun to play for
+
+1379
+02:07:35,120 --> 02:07:42,160
+prolonged periods of time. It does seem like this puzzle you mentioned, the more you learn about it,
+
+1380
+02:07:42,160 --> 02:07:47,760
+the more you realize how little you know. It humbles you, but excites you by the possibility of
+
+1381
+02:07:47,760 --> 02:07:55,760
+learning more. One heck of a puzzle we got going on here. I mentioned of all the people in the
+
+1382
+02:07:55,760 --> 02:08:04,240
+world, you're very likely to be the one who creates the AGI system that achieves human level
+
+1383
+02:08:04,240 --> 02:08:09,440
+intelligence and goes beyond it. If you got a chance in very well, you could be the person that
+
+1384
+02:08:09,440 --> 02:08:15,200
+goes into the room with the system and have a conversation. Maybe you only get to ask one question.
+
+1385
+02:08:15,200 --> 02:08:22,480
+If you do, what question would you ask her? I would probably ask, what is the true nature of
+
+1386
+02:08:22,480 --> 02:08:26,320
+reality? I think that's the question. I don't know if I don't understand the answer, because maybe
+
+1387
+02:08:26,320 --> 02:08:30,720
+it would be 42 or something like that, but that's the question I would ask.
+
+1388
+02:08:32,320 --> 02:08:36,160
+And then there'll be a deep sigh from the systems like, all right, how do I explain to the
+
+1389
+02:08:36,160 --> 02:08:43,920
+system? All right, let me, I don't have time to explain. Maybe I'll draw you a picture. It is,
+
+1390
+02:08:44,560 --> 02:08:52,160
+I mean, how do you even begin to answer that question? Well, I think it would,
+
+1391
+02:08:52,560 --> 02:08:57,760
+what would you think the answer could possibly look like? I think it could, it could start looking
+
+1392
+02:08:57,760 --> 02:09:03,120
+like more fundamental explanations of physics would be the beginning. You know,
+
+1393
+02:09:03,120 --> 02:09:08,320
+it's more careful specification of that, taking you walking us through by the hand as to what
+
+1394
+02:09:08,320 --> 02:09:13,840
+one would do to maybe prove those things out. Maybe giving you glimpses of what things you
+
+1395
+02:09:13,840 --> 02:09:20,240
+totally missed in the physics of today. Exactly. Here's glimpses of, no, like there's a much
+
+1396
+02:09:22,160 --> 02:09:25,120
+much more elaborate world or a much simpler world or something.
+
+1397
+02:09:26,560 --> 02:09:31,760
+A much deeper, maybe simpler explanation of things, right? Then the standard model of physics,
+
+1398
+02:09:31,760 --> 02:09:37,760
+which we know doesn't work, but we still keep adding to. So, and that's how I think the beginning
+
+1399
+02:09:37,760 --> 02:09:41,680
+of an exploration would look. And it would start encompassing many of the mysteries that we have
+
+1400
+02:09:41,680 --> 02:09:47,760
+wondered about for thousands of years, like, you know, consciousness, dreaming, life and gravity,
+
+1401
+02:09:47,760 --> 02:09:51,920
+all of these things. Yeah, giving us glimpses of explanations for those things. Yeah.
+
+1402
+02:09:52,480 --> 02:09:58,960
+Well, Dennis, you're one of the special human beings in this giant puzzle of ours.
+
+1403
+02:09:58,960 --> 02:10:02,800
+And it's a huge honor that you would take a pause from the bigger puzzle to solve this small
+
+1404
+02:10:02,800 --> 02:10:06,400
+puzzle of a conversation with me today. It's truly an honor and a pleasure. Thank you so much.
+
+1405
+02:10:06,400 --> 02:10:07,920
+Thank you so much. We really enjoyed it. Thanks, Dex.
+
+1406
+02:10:08,960 --> 02:10:11,760
+Thanks for listening to this conversation with Dennisus Hobbes.
+
+1407
+02:10:11,760 --> 02:10:15,120
+To support this podcast, please check out our sponsors in the description.
+
+1408
+02:10:15,680 --> 02:10:19,280
+And now, let me leave you with some words from Edgar Dextra.
+
+1409
+02:10:20,240 --> 02:10:25,840
+Computer science is no more about computers than astronomy is about telescopes.
+
+1410
+02:10:25,840 --> 02:10:35,840
+Thank you for listening and hope to see you next time.
+
