@@ -1,0 +1,21 @@
+#header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+#intro {
+  margin: 20px;
+}
+
+h1#title {
+  margin: 20px;
+}
+
+ol#podcasts li {
+  margin-top: 20px;
+}
+
+.podcast {
+  width: "100%";
+}
